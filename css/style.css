@@ -20,7 +20,6 @@ body {
     margin: 0;
 }
 
-
 nav {
     align-items: center;
     background-color: rgb(56, 102, 187);
@@ -29,10 +28,11 @@ nav {
     height: 45px;
     flex-direction: row;
 }
-#reset-button {
+#dark-mode-button {
     border-radius: 20px;
     background-color: black;
     color: blanchedalmond;
+    margin-right: 5px;
 }
 
 main{
@@ -47,6 +47,10 @@ main{
     border-radius: 8px;
     justify-content: center;
     align-items: center;
+}
+
+#categories {
+    padding-top: 5px;
 }
 
 #important-message {
