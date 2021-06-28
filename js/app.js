@@ -60,10 +60,12 @@ let isWinner, wrongAnswer, timeLeft
 
 /*----- cached element references -----*/ 
 const darkMode = document.querySelector("#dark-mode-button")
-const fifaWorldCup = document.querySelector("#fifa-button")
-const nfl = document.querySelector("#nfl-button")
-const olympics = document.querySelector("#olympics-button")
-const basketball = document.querySelector("#basketball-button")
+const importantMessage = document.querySelector("#important-message")
+const questionElement = document.querySelector("#question")
+const fifaWorldCup = document.querySelector("#choice1")
+const nfl = document.querySelector("#choice2")
+const olympics = document.querySelector("#choice3")
+const basketball = document.querySelector("#choice4")
 
 /*----- event listeners -----*/ 
 darkMode.addEventListener("click", colorScheme.change)
@@ -72,10 +74,25 @@ nfl.addEventListener = ("click", nflQuiz)
 olympics.addEventListener = ("click", olympicsQuiz)
 basketball.addEventListener = ("click", basketballQuiz)
 
-function fifaQuiz () {
-    document.getElementById("important-message").innerHTML = "GOOD LUCK!"
-    addNewQuestion()
+// function fifaQuiz (i) {
+//     importantMessage.innerHTML = "GOOD LUCK!"
+//     let soccerQuestion = soccerQuestions[i]
+//     questionElement.innerHTML = soccerQuestion.question
+//     console.log(fifaQuiz[1])
     
+// }
+
+let randomSoccerQuestion = []
+
+function fifaQuiz () {
+    while (randomSoccerQuestion.length <= 3) {
+        importantMessage.innerHTML = "Good Luck!"
+        const random = soccerQuestions[Math.floor(Math.random() * soccerQuestions.length)]
+        if (!randomSoccerQuestion.includes(random)) {
+            randomSoccerQuestion.push(random)
+        }
+        questionElement.innerHTML = soccerQuestions.question
+    }
 }
 
 function nflQuiz(){
@@ -90,10 +107,10 @@ function basketballQuiz () {
 
 }
 
-function addNewQuestion (i) {
-    newQuestion = soccerQuestions[question]
+// function addNewQuestion (i) {
+//     newQuestion = soccerQuestions[question]
 
-}
+// }
 
 /*----- functions -----*/
 checkUserColorSchemePreference()
@@ -105,5 +122,3 @@ function checkUserColorSchemePreference() {
         colorScheme.change()
     }
 }
-
-addNewQuestion

@@ -60,6 +60,7 @@ main{
     font-family: sans-serif;
     color: cornsilk;
     text-align: center;
+    margin: 0;
 }
 
 #result-message {
@@ -67,5 +68,16 @@ main{
     font-size: 22px;
     font-family: sans-serif;
     color: cornsilk;
+    text-align: center;
+}
+
+#choice1 { 
+    display: flex;
+    width: 150px;
+    height: 65px;
+    margin-top: 7%;
+    margin-left: 70px;
+    background-color: rgb(61, 61, 143);
+    font-size: 20px;
     text-align: center;
 }
