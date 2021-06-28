@@ -39,8 +39,8 @@ main{
     position: relative;
     top: 30%;
     text-align: center;
-    width: 550px;
-    height: 300px;
+    width: 450px;
+    height: 400px;
     margin: auto;
     color: darkred;
     background-color: darkgray;
@@ -51,6 +51,12 @@ main{
 
 #categories {
     padding-top: 5px;
+}
+
+.choice {
+    margin: auto;
+    padding: 10px 0 5px 0;
+    align-items: center;
 }
 
 #important-message {
@@ -71,13 +77,19 @@ main{
     text-align: center;
 }
 
-#choice1 { 
-    display: flex;
-    width: 150px;
-    height: 65px;
-    margin-top: 7%;
-    margin-left: 70px;
-    background-color: rgb(61, 61, 143);
+main .choice {
+    background-color: rgb(56, 102, 187, .5);
+    width: 250px;
+    height: 50px;
+    margin-top: 20px;
     font-size: 20px;
-    text-align: center;
+    border-radius: 3px;
+    border: 2px solid;
+    display: flex;
+    flex-direction: ;
+    flex-wrap: inherit;
+    justify-content: space-evenly;
+    cursor: pointer;
+    align-items: center;
+
 }
