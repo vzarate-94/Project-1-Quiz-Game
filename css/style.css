@@ -35,7 +35,8 @@ nav {
     margin-right: 5px;
 }
 
-main{
+main,
+.quiz-box {
     position: relative;
     top: 30%;
     text-align: center;
@@ -48,7 +49,7 @@ main{
     justify-content: center;
     align-items: center;
 }
-
+#question-message,
 #intro-message {
     padding-top: 10px;
 }
@@ -63,7 +64,7 @@ main{
     margin: 0;
 }
 
-#result-message {
+#simple-message {
     padding-top: 20px;
     font-size: 22px;
     font-family: sans-serif;
@@ -87,6 +88,7 @@ main .choice {
     align-items: center;
 }
 
+.opt-btn,
 main .btn {
     background-color: rgb(56, 102, 187, .5);
     color: rgb(145, 2, 2);
@@ -110,6 +112,7 @@ main .btn {
 main .next {
     margin-top: 15px;
 }
+.opt-btn:hover,
 main .btn:hover {
     background-color: rgba(25, 25, 104, 0.81);
 }

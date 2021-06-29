@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <script defer src="./js/Project.js"></script>
+    <script defer src="./js/soccer.js"></script>
     <title>Sports Trivia Central</title>
 </head>
 <body>
@@ -15,15 +15,17 @@
     <section id="important-message" class="main-message">
         <h1 id="main-menu">Welcome to Sports Trivia Central</h1>
     </section>
-    <main class="front-container">
-        <h1 id="intro-message" class="intro-message">Pick a category!</h1>
-            <a href="quiz.html" class="btn">FIFA World Cup</a>
-            <a href="quiz.html" class="btn">NFL</a>
-            <a href="quiz.html" class="btn">Olympics</a>
-            <a href="quiz.html" class="btn">Basketball</a>
-    </main>
-    <section id="result-message">
-        <h2>Test your sports knowledge!</h2>
+    <div class="quiz-box">
+        <h1 id="question-message" class="questions"></h1>
+            <button class="opt-btn"></button>
+            <button class="opt-btn"></button>
+            <button class="opt-btn"></button>
+            <button class="opt-btn"></button>
+            <div id="score-message">score: <p id="soccer-score"> /4</p></div>
+
+    </div>
+    <section id="simple-message">
+        <h2>Good Luck!!</h2>
     </section>
 </body>
 </html>
