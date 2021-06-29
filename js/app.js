@@ -316,6 +316,13 @@ olympicQuizInit()
 
 const movieQuestionElement = document.querySelector("#movie-question-message");
 const movieOptions = Array.from(document.getElementsByClassName(".opt-btn"));
+const movie1 = document.querySelector("#movie1");
+const movie2 = document.querySelector("#movie2");
+const movie3 = document.querySelector("#movie3");
+const movie4 = document.querySelector("#movie4");
+const movieButton = document.querySelector("#movie");
+
+movieButton.addEventListener("click", movieQuizInit)
 
 let currentMovieQuestion = {};
 let MovieScore = 0;
