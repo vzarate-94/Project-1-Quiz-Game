@@ -65,7 +65,6 @@ const darkMode = document.querySelector("#dark-mode-button");
 const importantMessage = document.querySelector("#important-message");
 const questionElement = document.querySelector("#question");
 const choiceElement = Array.from(document.querySelector(".choice"));
-console.log(choiceElement)
 const fifaWorldCup = document.querySelector("#choice1");
 const nfl = document.querySelector("#choice2");
 const olympics = document.querySelector("#choice3");
@@ -82,7 +81,6 @@ function fifaQuiz () {
     questionNumber = 0;
     score = 0;
     availableSoccerQuestions = [...soccerQuestions];
-    console.log(availableSoccerQuestions);
     getSoccerQuestion();
 };
 
