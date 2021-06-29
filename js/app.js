@@ -1,4 +1,5 @@
 /*----- constants -----*/ 
+const darkMode = document.querySelector("#dark-mode-button")
 const colorScheme = {
     dark: "",
     change: function() {
@@ -7,6 +8,9 @@ const colorScheme = {
         document.querySelector("body").setAttribute("class", colorScheme.dark)
     }
 };
+darkMode.addEventListener("click", colorScheme.change)
+
+
 
 checkUserColorSchemePreference();
 
@@ -17,7 +21,7 @@ function checkUserColorSchemePreference() {
         colorScheme.change()
     }
 };
-
+console.log()
 // ------ Constants ------
 
 // ----- variables -----
