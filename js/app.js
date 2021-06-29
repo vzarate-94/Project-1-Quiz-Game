@@ -217,16 +217,16 @@ nflQuizInit()
 const olympicQuestionElement = document.querySelector("#olympic-question-message");
 const olympicOptions = Array.from(document.getElementsByClassName(".opt-btn"));
 const Olympic1 = document.querySelector("#olympic1");
-const Olympic2 = document.querySelector("#olympic2");
-const Olympic3 = document.querySelector("#olympic3");
-const Olympic4 = document.querySelector("#olympic4");
+const olympic2 = document.querySelector("#olympic2");
+const olympic3 = document.querySelector("#olympic3");
+const olympic4 = document.querySelector("#olympic4");
 
 let currentOlympicQuestion = {};
 let olympicScore = 0;
-let OlympicQuestionsAsked = 0;
+let olympicQuestionsAsked = 0;
 let availableOlympicQuestions = [];
-const OlympicPointsAdded = 10;
-const OlympicMaxQuestions = 4;
+const olympicPointsAdded = 10;
+const olympicMaxQuestions = 4;
 
 let olympicQuestions = [
     {
@@ -284,16 +284,16 @@ function nextOlympicQuestion () {
     olympicQuestionElement.innerHTML = newOlympicQuestion
 
     newOlympicQuestionChoice1= currentOlympicQuestion.choice1;
-    Olympic1.innerHTML = newOlympicQuestionChoice1;
+    olympic1.innerHTML = newOlympicQuestionChoice1;
 
     newOlympicQuestionChoice2= currentOlympicQuestion.choice2;
-    Olympic2.innerHTML = newOlympicQuestionChoice2;
+    olympic2.innerHTML = newOlympicQuestionChoice2;
 
-    newNflQuestionChoice3= currentNflQuestion.choice3;
-    Olympic3.innerHTML = newOlympicQuestionChoice3;
+    newOlympicQuestionChoice3= currentOlympicQuestion.choice3;
+    olympic3.innerHTML = newOlympicQuestionChoice3;
 
-    newNflQuestionChoice4= currentNflQuestion.choice4;
-    Olympic4.innerHTML = newOlympicQuestionChoice4;
+    newOlympicQuestionChoice4= currentOlympicQuestion.choice4;
+    olympic4.innerHTML = newOlympicQuestionChoice4;
 }
 
 //     soccerOptions.forEach(choice => {
@@ -305,70 +305,82 @@ function nextOlympicQuestion () {
 
 olympicQuizInit()
 
-const bballQuestionElement = document.querySelector("#question-message");
-const bballOptions = Array.from(document.getElementsByClassName(".opt-btn"));
+const movieQuestionElement = document.querySelector("#movie-question-message");
+const movieOptions = Array.from(document.getElementsByClassName(".opt-btn"));
 
-let currentBballQuestion = {};
-let BballScore = 0;
-let questionsAsked = 0;
-let availableBballQuestions = [];
-const pointsAdded = 10;
-const maxQuestions = 4;
+let currentMovieQuestion = {};
+let MovieScore = 0;
+let MovieQuestionsAsked = 0;
+let availableMovieQuestions = [];
+const moviePointsAdded = 10;
+const movieMaxQuestions = 4;
 
-let bballQuestions = [
+let movieQuestions = [
     {
     number: 1,
-    question: "Who was the youngest player to score 10,000 points in the NBA?",
-    answer: "Lebron James",
-    choice1: "Kobe Bryant",
-    choice2: "Michael Jordan",
-    choice3: "Lebron James",
-    choice4: "Wilt Chamberlain",
+    question: "Who introduced us to the flying V?",
+    answer: "The Mighty Ducks",
+    choice1: "The Anaheim Ducks",
+    choice2: "The Detriot Ducklings",
+    choice3: "The Mighty Ducks",
+    choice4: "The Philadelphia Flyers",
     },
     {
     number: 2,
-    question: "What is the oldest NFL franchise in continuous operation with the same name in the same location?",
-    answer: "Green Bay Packers",
-    choice1: "Green Bay Packers",
-    choice2: "New York Giants",
-    choice3: "Chicago Bears",
-    choice4: "Cleveland Browns",
+    question: "What fast food chain did Happy Gilmore make a commercial for?",
+    answer: "Subway",
+    choice1: "Mcdonalds",
+    choice2: "Pizza Hut",
+    choice3: "Subway",
+    choice4: "Taco Bell",
     },
     {
     number: 3,
-    question: "Which NBA player is featured in a Super Nintendo game called Combat Basketball?",
-    answer: "Bill Laimbeer",
-    choice1: "Dennis Rodman",
-    choice2: "Bill Laimbeer",
-    choice3: "Shaq",
-    choice4: "Michael Jordan",
+    question: "In The Sandlot, what is the name of The Beast?",
+    answer: "Hercules",
+    choice1: "Hercules",
+    choice2: "The Sultan of Swat",
+    choice3: "Titan",
+    choice4: "The Great Bambino",
     },
     {
     number: 4,
-    question: "What is the only NFL team to complete a perfect season?",
-    answer: "Miami Dolphins",
-    choice1: "Seatle Seahawks",
-    choice2: "New England Patriots",
-    choice3: "Miami Dolphins",
-    choice4: "New Orleans Saints",
+    question: "What was the name of the high school in Remember The Titans?",
+    answer: "T.C. Williams",
+    choice1: "Loudoun County High",
+    choice2: "Jefferson High School",
+    choice3: "Montgomery High",
+    choice4: "T.C. Williams",
     }
 ]
 // ------Event Listeners -------
 // -----functions ------
 
-function bballQuizInit () {
-    questionsAsked = 0;
-    bballScore = 0;
-    availableBballQuestions = [...bballQuestions];
-    nextBballQuestion();
+function movieQuizInit () {
+    movieQuestionsAsked = 0;
+    movieScore = 0;
+    availableMovieQuestions = [...movieQuestions];
+    nextMovieQuestion();
 }
 
-function nextBballQuestion () {
-    questionsAsked++;
-    const bballArray = Math.floor(Math.random() * availableBballQuestions.length);
-    currentBballQuestion = availableBballQuestions[bballArray];
-    newBballQuestion = currentBballQuestion.question
-    bballQuestionElement.innerHTML = newBballQuestion
+function nextMovieQuestion () {
+    movieQuestionsAsked++;
+    const movieArray = Math.floor(Math.random() * availableMovieQuestions.length);
+    currentMovieQuestion = availableMovieQuestions[movieArray];
+    newMovieQuestion = currentMovieQuestion.question
+    movieQuestionElement.innerHTML = newMovieQuestion
+
+    newMovieQuestionChoice1= currentMovieQuestion.choice1;
+    movie1.innerHTML = newMovieQuestionChoice1;
+
+    newMovieQuestionChoice2= currentMovieQuestion.choice2;
+    movie2.innerHTML = newMovieQuestionChoice2;
+
+    newMovieQuestionChoice3= currentMovieQuestion.choice3;
+    movie3.innerHTML = newMovieQuestionChoice3;
+
+    newMovieQuestionChoice4= currentMovieQuestion.choice4;
+    movie4.innerHTML = newMovieQuestionChoice4;
 }
 
 //     soccerOptions.forEach(choice => {
@@ -378,4 +390,4 @@ function nextBballQuestion () {
 //     });
 // };
 
-bballQuizInit()
+movieQuizInit()
