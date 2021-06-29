@@ -3,6 +3,11 @@
 // ----- variables -----
 const soccerQuestionElement = document.querySelector("#question-message");
 const soccerOptions = Array.from(document.getElementsByClassName(".opt-btn"));
+const choice1 = document.querySelector("#choice1");
+const choice2 = document.querySelector("#choice2");
+const choice3 = document.querySelector("#choice3");
+const choice4 = document.querySelector("#choice4");
+
 
 let currentSoccerQuestion = {};
 let soccerScore = 0;
@@ -70,6 +75,18 @@ function nextSoccerQuestion () {
     currentSoccerQuestion = availableSoccerQuestions[soccerArray];
     newSoccerQuestion = currentSoccerQuestion.question
     soccerQuestionElement.innerHTML = newSoccerQuestion
+
+    newSoccerQuestionChoice1= currentSoccerQuestion.choice1;
+    choice1.innerHTML = newSoccerQuestionChoice1;
+
+    newSoccerQuestionChoice2 = currentSoccerQuestion.choice2;
+    choice2.innerHTML = newSoccerQuestionChoice2;
+
+    newSoccerQuestionChoice3 = currentSoccerQuestion.choice3;
+    choice3.innerHTML = newSoccerQuestionChoice3;
+
+    newSoccerQuestionChoice4 = currentSoccerQuestion.choice4
+    choice4.innerHTML = newSoccerQuestionChoice4
 }
 
 //     soccerOptions.forEach(choice => {
