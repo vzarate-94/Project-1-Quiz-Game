@@ -53,6 +53,8 @@ let soccerQuestions = [
     }
 ];
 // ------Event Listeners -------
+
+
 // -----functions ------
 
 function SoccerQuizInit () {
