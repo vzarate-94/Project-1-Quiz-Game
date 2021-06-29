@@ -226,6 +226,9 @@ const Olympic1 = document.querySelector("#olympic1");
 const olympic2 = document.querySelector("#olympic2");
 const olympic3 = document.querySelector("#olympic3");
 const olympic4 = document.querySelector("#olympic4");
+const olympicButton = document.querySelector("#olympics");
+
+olympicButton.addEventListener("click", olympicQuizInit)
 
 let currentOlympicQuestion = {};
 let olympicScore = 0;
