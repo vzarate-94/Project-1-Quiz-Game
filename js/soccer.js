@@ -68,6 +68,7 @@ function nextSoccerQuestion () {
     currentSoccerQuestion = availableSoccerQuestions[soccerArray];
     newSoccerQuestion = currentSoccerQuestion.question
     soccerQuestionElement.innerHTML = newSoccerQuestion
+}
 
 //     soccerOptions.forEach(choice => {
 //         const soccerNumber = choice.dataset["number"]
