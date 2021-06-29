@@ -44,7 +44,7 @@ let soccerQuestions = [
     choice1: "Miroslav Klose - Germany",
     choice2: "Ronaldo - Brazil",
     choice3: "Christiano Ronoaldo - Portugal",
-    choice4: "Messi - Argintina",
+    choice4: "Messi - Argentina",
     },
 
     {
