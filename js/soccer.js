@@ -59,18 +59,22 @@ function SoccerQuizInit () {
     questionsAsked = 0;
     soccerScore = 0;
     availableSoccerQuestions = [...soccerQuestions];
-
-    console.log(availableSoccerQuestions)
+    nextSoccerQuestion();
 }
+
+function nextSoccerQuestion () {
+    questionsAsked++;
+    const soccerArray = Math.floor(Math.random() * availableSoccerQuestions.length);
+    currentSoccerQuestion = availableSoccerQuestions[soccerArray];
+    newSoccerQuestion = currentSoccerQuestion.question
+    soccerQuestionElement.innerHTML = newSoccerQuestion
+
+//     soccerOptions.forEach(choice => {
+//         const soccerNumber = choice.dataset["number"]
+//         choice.innerHTML = newSoccerQuestion["choice" + number]
+//         console.log(newSoccerQuestion["choice" + number])
+//     });
+// };
+
 SoccerQuizInit()
 
-let randomSoccerQuestion = [];
-
-function giveSoccerQuestion () {
-    while(randomSoccerQuestion.length <= 4) {
-        const soccerRandom = soccerQuestions[Math.floor(Math.random() * soccerQuestions.length)]
-        if (!randomSoccerQuestion.includes(soccerRandom)) {
-            giveSoccerQuestion.push(soccerRandom)
-        }
-    }
-};
