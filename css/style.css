@@ -35,6 +35,7 @@ nav {
     margin-right: 5px;
 }
 
+
 main,
 .quiz-box {
     position: relative;
@@ -71,7 +72,7 @@ main,
     color: cornsilk;
     text-align: center;
 }
-
+soccer,
 main .choice {
     background-color: rgb(56, 102, 187, .5);
     width: 250px;
@@ -87,6 +88,7 @@ main .choice {
     cursor: pointer;
     align-items: center;
 }
+
 
 .opt-btn,
 main .btn {
