@@ -31,7 +31,6 @@ const choice1 = document.querySelector("#choice1");
 const choice2 = document.querySelector("#choice2");
 const choice3 = document.querySelector("#choice3");
 const choice4 = document.querySelector("#choice4");
-
 const button1 = document.querySelector("#fifa")
 
 button1.addEventListener("click", SoccerQuizInit)
@@ -132,6 +131,9 @@ const nfl1 = document.querySelector("#nfl1");
 const nfl2 = document.querySelector("#nfl2");
 const nfl3 = document.querySelector("#nfl3");
 const nfl4 = document.querySelector("#nfl4");
+const nflButton = document.querySelector("#nfl")
+
+nflButton.addEventListener("click", nflQuizInit)
 
 let currentNflQuestion = {};
 let nflScore = 0;
