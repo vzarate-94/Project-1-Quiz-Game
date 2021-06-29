@@ -5,13 +5,13 @@ const nflQuestionElement = document.querySelector("#question-message");
 const nflOptions = Array.from(document.getElementsByClassName(".opt-btn"));
 
 let currentNflQuestion = {};
-let NflScore = 0;
+let nflScore = 0;
 let questionsAsked = 0;
 let availableNflQuestions = [];
 const pointsAdded = 10;
 const maxQuestions = 4;
 
-let NflQuestions = [
+let nflQuestions = [
     {
     number: 1,
     question: "What team won 3 Super Bowls in the 1990s?",
@@ -52,10 +52,10 @@ let NflQuestions = [
 // ------Event Listeners -------
 // -----functions ------
 
-function NflQuizInit () {
+function nflQuizInit () {
     questionsAsked = 0;
-    NflScore = 0;
-    availableNflQuestions = [...NflQuestions];
+    nflScore = 0;
+    availableNflQuestions = [...nflQuestions];
     nextNflQuestion();
 }
 
@@ -74,4 +74,4 @@ function nextNflQuestion () {
 //     });
 // };
 
-NflQuizInit()
+nflQuizInit()
