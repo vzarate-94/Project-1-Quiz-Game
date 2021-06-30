@@ -28,10 +28,10 @@ const movieButton = document.querySelector("#movie");
 // main page query selectors above!
 const soccerQuestionElement = document.querySelector("#question-message");
 const soccerOptions = Array.from(document.getElementsByClassName(".opt-btn"));
-const choice1 = document.querySelector("#choice1");
-const choice2 = document.querySelector("#choice2");
-const choice3 = document.querySelector("#choice3");
-const choice4 = document.querySelector("#choice4");
+const soccer1 = document.querySelector("#soccer1");
+const soccer2 = document.querySelector("#soccer2");
+const soccer3 = document.querySelector("#soccer3");
+const soccer4 = document.querySelector("#soccer4");
 const soccerQuiz = document.querySelector("#soccer-quiz");
 // Soccer quiz query selectors above
 const nflQuestionElement = document.querySelector("#nfl-question-message");
@@ -100,7 +100,7 @@ let soccerQuestions = [
     {
     number: 4,
     question: "Which country will host the 2022 World Cup?",
-    answer: "Qatar",
+    answer: "choice3",
     choice1:"United Arab Emirates",
     choice2:"Kuwait",
     choice3:"Qatar",
@@ -251,6 +251,11 @@ button1.addEventListener("click", SoccerQuizInit)
 nflButton.addEventListener("click", nflQuizInit)
 olympicButton.addEventListener("click", olympicQuizInit)
 movieButton.addEventListener("click", movieQuizInit)
+// main page event listeners above
+soccer1.addEventListener("click", checkSoccerAnswer)
+soccer2.addEventListener("click", checkSoccerAnswer)
+soccer3.addEventListener("click", checkSoccerAnswer)
+soccer4.addEventListener("click", checkSoccerAnswer)
 
 // -----functions ------
 function init () {
@@ -279,16 +284,20 @@ function nextSoccerQuestion () {
     soccerQuestionElement.innerHTML = newSoccerQuestion
 
     newSoccerQuestionChoice1= currentSoccerQuestion.choice1;
-    choice1.innerHTML = newSoccerQuestionChoice1;
+    soccer1.innerHTML = newSoccerQuestionChoice1;
 
     newSoccerQuestionChoice2 = currentSoccerQuestion.choice2;
-    choice2.innerHTML = newSoccerQuestionChoice2;
+    soccer2.innerHTML = newSoccerQuestionChoice2;
 
     newSoccerQuestionChoice3 = currentSoccerQuestion.choice3;
-    choice3.innerHTML = newSoccerQuestionChoice3;
+    soccer3.innerHTML = newSoccerQuestionChoice3;
 
     newSoccerQuestionChoice4 = currentSoccerQuestion.choice4
-    choice4.innerHTML = newSoccerQuestionChoice4
+    soccer4.innerHTML = newSoccerQuestionChoice4
+}
+function checkSoccerAnswer () {
+    console.log(checkSoccerAnswer)
+    nextSoccerQuestion()
 }
 
 function nflQuizInit () {
