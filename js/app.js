@@ -332,10 +332,13 @@ function checkSoccerAnswer (e) {
 }
 
 function checkEndSoccerQuiz () {
-    if (soccerQuestionsAsked === 4){
-    init()
+    if (soccerQuestionsAsked == 4){
+        mainMessageEl.innerText = `GREAT JOB! YOU GOT ${soccerScore} / 100`
+            setTimeout (function() {
+                init()
+            },2000)
+        }
     }
-}
 
 
 function nflQuizInit () {
@@ -381,10 +384,13 @@ function checkNflAnswer (e) {
 }
 
 function checkEndNflQuiz () {
-    if (nflQuestionsAsked >= 10){
-    init()
-}
-}
+    if (nflQuestionsAsked == 4){
+        mainMessageEl.innerText = `GREAT JOB! YOU GOT ${nflScore} / 100`
+            setTimeout (function() {
+                init()
+            },2000)
+        }
+    }
 
 function olympicQuizInit () {
     olympicQuiz.classList.remove("olympic-quiz-box");
@@ -429,8 +435,11 @@ function checkOlympicAnswer (e) {
 }
 
 function checkEndOlympicQuiz () {
-    if (olympicQuestionsAsked >= 10) {
-        init()
+    if (olympicQuestionsAsked == 4){
+        mainMessageEl.innerText = `GREAT JOB! YOU GOT ${olympicScore} / 100`
+        setTimeout (function() {
+            init()
+        },2000)
     }
 }
 
