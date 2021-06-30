@@ -72,7 +72,7 @@ main,
     color: cornsilk;
     text-align: center;
 }
-soccer,
+
 main .choice {
     background-color: rgb(56, 102, 187, .5);
     width: 250px;
@@ -117,4 +117,22 @@ main .next {
 .opt-btn:hover,
 main .btn:hover {
     background-color: rgba(25, 25, 104, 0.81);
+}
+
+#soccer-score-message,
+#nfl-score-message,
+#olympic-score-message,
+#movie-score-message {
+    font-size: 20px;
+}
+
+.soccer-quiz-box,
+.nfl-quiz-box,
+.olympic-quiz-box,
+.movie-quiz-box {
+    display: none;
+}
+
+.front-container {
+    display: none;
 }

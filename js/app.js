@@ -21,7 +21,7 @@ function checkUserColorSchemePreference() {
         colorScheme.change()
     }
 };
-console.log()
+
 // ------ Constants ------
 
 // ----- variables -----
@@ -31,7 +31,9 @@ const choice1 = document.querySelector("#choice1");
 const choice2 = document.querySelector("#choice2");
 const choice3 = document.querySelector("#choice3");
 const choice4 = document.querySelector("#choice4");
-const button1 = document.querySelector("#fifa")
+const button1 = document.querySelector("#fifa");
+const mainPage = document.querySelector("#front-container");
+const soccerQuiz = document.querySelector("#soccer-quiz");
 
 button1.addEventListener("click", SoccerQuizInit)
 
@@ -88,8 +90,13 @@ let soccerQuestions = [
 
 
 // -----functions ------
+// init () {
+//     mainPage.classList.remove("front-container")
+// }
 
 function SoccerQuizInit () {
+    soccerQuiz.classList.remove("soccer-quiz-box");
+    // mainPage.classList.add("front-container")
     soccerQuestionsAsked = 0;
     soccerScore = 0;
     availableSoccerQuestions = [...soccerQuestions];
@@ -123,7 +130,7 @@ function nextSoccerQuestion () {
 //     });
 // };
 
-SoccerQuizInit()
+
 
 const nflQuestionElement = document.querySelector("#nfl-question-message");
 const nflOptions = Array.from(document.getElementsByClassName(".opt-btn"));
