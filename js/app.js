@@ -45,7 +45,7 @@ const nflQuiz = document.querySelector("#nfl-quiz");
 // nfl quiz query selectors above
 const olympicQuestionElement = document.querySelector("#olympic-question-message");
 const olympicOptions = Array.from(document.getElementsByClassName(".opt-btn"));
-const Olympic1 = document.querySelector("#olympic1");
+const olympic1 = document.querySelector("#olympic1");
 const olympic2 = document.querySelector("#olympic2");
 const olympic3 = document.querySelector("#olympic3");
 const olympic4 = document.querySelector("#olympic4");
@@ -119,7 +119,7 @@ let nflQuestions = [
     {
     number: 1,
     question: "What team won 3 Super Bowls in the 1990s?",
-    answer: "Cowboys",
+    answer: 3,
     choice1: "Broncos",
     choice2: "49ers",
     choice3: "Cowboys",
@@ -128,7 +128,7 @@ let nflQuestions = [
     {
     number: 2,
     question: "What is the oldest NFL franchise in continuous operation with the same name in the same location?",
-    answer: "Green Bay Packers",
+    answer: 1,
     choice1: "Green Bay Packers",
     choice2: "New York Giants",
     choice3: "Chicago Bears",
@@ -137,7 +137,7 @@ let nflQuestions = [
     {
     number: 3,
     question: "Which NFL player legally changed his name to match his jersey number?",
-    answer: "Chad Johnson",
+    answer: 4,
     choice1: "Dez Bryant",
     choice2: "Terrell Owens",
     choice3: "Deion Sanders",
@@ -146,7 +146,7 @@ let nflQuestions = [
     {
     number: 4,
     question: "What is the only NFL team to complete a perfect season?",
-    answer: "Miami Dolphins",
+    answer: 3,
     choice1: "Seatle Seahawks",
     choice2: "New England Patriots",
     choice3: "Miami Dolphins",
@@ -164,16 +164,16 @@ let olympicQuestions = [
     {
     number: 1,
     question: "What is the Olympic motto?",
-    answer: "Faster, Higher Stronger",
+    answer: 3,
     choice1: "Refuse To Lose",
     choice2: "Dare To Be Great",
-    choice3: "Faster, Higher Stronger",
+    choice3: "Faster, Higher, Stronger",
     choice4: "Man's Reach Exceeds His Grasp",
     },
     {
     number: 2,
     question: "An Olympic gold medal is made mostly of what metal?",
-    answer: "Silver",
+    answer: 4,
     choice1: "Nickel",
     choice2: "Gold",
     choice3: "Copper",
@@ -182,7 +182,7 @@ let olympicQuestions = [
     {
     number: 3,
     question: "Which of these animals were used in the 1900 Olympics?",
-    answer: "Pigeons",
+    answer: 2,
     choice1: "Camels",
     choice2: "Pigeons",
     choice3: "Bears",
@@ -191,7 +191,7 @@ let olympicQuestions = [
     {
     number: 4,
     question: "Which color is NOT one of the rings on the Olympic flag?",
-    answer: "Orange",
+    answer: 4,
     choice1: "Yellow",
     choice2: "Green",
     choice3: "Black",
@@ -209,7 +209,7 @@ let movieQuestions = [
     {
     number: 1,
     question: "Who introduced us to the flying V?",
-    answer: "The Mighty Ducks",
+    answer: 3,
     choice1: "The Anaheim Ducks",
     choice2: "The Detriot Ducklings",
     choice3: "The Mighty Ducks",
@@ -218,7 +218,7 @@ let movieQuestions = [
     {
     number: 2,
     question: "What fast food chain did Happy Gilmore make a commercial for?",
-    answer: "Subway",
+    answer: 3,
     choice1: "Mcdonalds",
     choice2: "Pizza Hut",
     choice3: "Subway",
@@ -227,7 +227,7 @@ let movieQuestions = [
     {
     number: 3,
     question: "In The Sandlot, what is the name of The Beast?",
-    answer: "Hercules",
+    answer: 1,
     choice1: "Hercules",
     choice2: "The Sultan of Swat",
     choice3: "Titan",
@@ -236,7 +236,7 @@ let movieQuestions = [
     {
     number: 4,
     question: "What was the name of the high school in Remember The Titans?",
-    answer: "T.C. Williams",
+    answer: 4,
     choice1: "Loudoun County High",
     choice2: "Jefferson High School",
     choice3: "Montgomery High",
@@ -258,6 +258,20 @@ soccer2.addEventListener("click", checkSoccerAnswer)
 soccer3.addEventListener("click", checkSoccerAnswer)
 soccer4.addEventListener("click", checkSoccerAnswer)
 // soccer quiz event listeners!
+nfl1.addEventListener("click", checkNflAnswer)
+nfl2.addEventListener("click", checkNflAnswer)
+nfl3.addEventListener("click", checkNflAnswer)
+nfl4.addEventListener("click", checkNflAnswer)
+// nfl quiz event listeners
+olympic1.addEventListener("click", checkOlympicAnswer)
+olympic2.addEventListener("click", checkOlympicAnswer)
+olympic3.addEventListener("click", checkOlympicAnswer)
+olympic4.addEventListener("click", checkOlympicAnswer)
+// olympic quiz event listeners
+movie1.addEventListener("click", checkMovieAnswer)
+movie2.addEventListener("click", checkMovieAnswer)
+movie3.addEventListener("click", checkMovieAnswer)
+movie4.addEventListener("click", checkMovieAnswer)
 
 // -----functions ------
 function init () {
@@ -300,11 +314,10 @@ function checkSoccerAnswer (e) {
     if (e.target.value == currentSoccerQuestion.answer ) {
     soccerScore++
     nextSoccerQuestion()
+    } else 
     console.log(soccerScore)
-    } else if (e.target.value !== currentSoccerQuestion.answer) {
-    } 
-    soccerScoreMessage.innerHTML = `${soccerScore} / 4`
-}
+    }
+
 
 function nflQuizInit () {
     nflQuiz.classList.remove("nfl-quiz-box");
@@ -333,6 +346,13 @@ function nextNflQuestion () {
 
     newNflQuestionChoice4= currentNflQuestion.choice4;
     nfl4.innerHTML = newNflQuestionChoice4;
+}
+
+function checkNflAnswer (e) {
+    if (e.target.value == currentNflQuestion.answer) {
+    nflScore++
+    nextNflQuestion()
+    }
 }
 
 function olympicQuizInit () {
@@ -364,6 +384,13 @@ function nextOlympicQuestion () {
     olympic4.innerHTML = newOlympicQuestionChoice4;
 }
 
+function checkOlympicAnswer (e) {
+    if (e.target.value == currentOlympicQuestion.answer) {
+    olympicScore++
+    nextOlympicQuestion()
+    }
+}
+
 function movieQuizInit () {
     movieQuiz.classList.remove("movie-quiz-box");
     mainPage.classList.add("front-container");
@@ -391,4 +418,14 @@ function nextMovieQuestion () {
 
     newMovieQuestionChoice4= currentMovieQuestion.choice4;
     movie4.innerHTML = newMovieQuestionChoice4;
+}
+
+function checkMovieAnswer (e) {
+    if (e.target.value == currentMovieQuestion.answer ) {
+    MovieScore++
+    console.log("correct")
+    } else if (e.target.value !== currentMovieQuestion.answer) {
+    console.log("wrong!")
+    }
+    nextMovieQuestion()
 }
