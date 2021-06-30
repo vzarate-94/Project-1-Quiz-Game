@@ -9,8 +9,6 @@ const colorScheme = {
     }
 };
 
-
-
 checkUserColorSchemePreference();
 
 function checkUserColorSchemePreference() {
@@ -154,108 +152,13 @@ let nflQuestions = [
     choice4: "New Orleans Saints",
     }
 ]
-
-// ------Event Listeners -------
-resetButton.addEventListener("click", init)
-darkMode.addEventListener("click", colorScheme.change)
-button1.addEventListener("click", SoccerQuizInit)
-nflButton.addEventListener("click", nflQuizInit)
-olympicButton.addEventListener("click", olympicQuizInit)
-movieButton.addEventListener("click", movieQuizInit)
-
-// -----functions ------
-
-function init () {
-    mainPage.classList.remove("front-container");
-    soccerQuiz.classList.add("soccer-quiz-box");
-    nflQuiz.classList.add("nfl-quiz-box");
-    olympicQuiz.classList.add("olympic-quiz-box");
-    movieQuiz.classList.add("movie-quiz-box")
-}
-
-function SoccerQuizInit () {
-    soccerQuiz.classList.remove("soccer-quiz-box");
-    mainPage.classList.add("front-container");
-    soccerQuestionsAsked = 0;
-    soccerScore = 0;
-    availableSoccerQuestions = [...soccerQuestions];
-    nextSoccerQuestion();
-}
-
-function nextSoccerQuestion () {
-    soccerQuestionsAsked++;
-    const soccerArray = Math.floor(Math.random() * availableSoccerQuestions.length);
-    currentSoccerQuestion = availableSoccerQuestions[soccerArray];
-    newSoccerQuestion = currentSoccerQuestion.question
-    soccerQuestionElement.innerHTML = newSoccerQuestion
-
-    newSoccerQuestionChoice1= currentSoccerQuestion.choice1;
-    choice1.innerHTML = newSoccerQuestionChoice1;
-
-    newSoccerQuestionChoice2 = currentSoccerQuestion.choice2;
-    choice2.innerHTML = newSoccerQuestionChoice2;
-
-    newSoccerQuestionChoice3 = currentSoccerQuestion.choice3;
-    choice3.innerHTML = newSoccerQuestionChoice3;
-
-    newSoccerQuestionChoice4 = currentSoccerQuestion.choice4
-    choice4.innerHTML = newSoccerQuestionChoice4
-}
-
-
-
-// ------Event Listeners -------
-// -----functions ------
-
-function nflQuizInit () {
-    nflQuiz.classList.remove("nfl-quiz-box");
-    mainPage.classList.add("front-container");
-    nflquestionsAsked = 0;
-    nflScore = 0;
-    availableNflQuestions = [...nflQuestions];
-    nextNflQuestion();
-}
-
-function nextNflQuestion () {
-    nflQuestionsAsked++;
-    const nflArray = Math.floor(Math.random() * availableNflQuestions.length);
-    currentNflQuestion = availableNflQuestions[nflArray];
-    newNflQuestion = currentNflQuestion.question
-    nflQuestionElement.innerHTML = newNflQuestion
-
-    newNflQuestionChoice1= currentNflQuestion.choice1;
-    nfl1.innerHTML = newNflQuestionChoice1;
-
-    newNflQuestionChoice2= currentNflQuestion.choice2;
-    nfl2.innerHTML = newNflQuestionChoice2;
-
-    newNflQuestionChoice3= currentNflQuestion.choice3;
-    nfl3.innerHTML = newNflQuestionChoice3;
-
-    newNflQuestionChoice4= currentNflQuestion.choice4;
-    nfl4.innerHTML = newNflQuestionChoice4;
-}
-
-
-//     soccerOptions.forEach(choice => {
-//         const soccerNumber = choice.dataset["number"]
-//         choice.innerHTML = newSoccerQuestion["choice" + number]
-//         console.log(newSoccerQuestion["choice" + number])
-//     });
-// };
-
-
-
-
-
-
+// NFL quiz variables above
 let currentOlympicQuestion = {};
 let olympicScore = 0;
 let olympicQuestionsAsked = 0;
 let availableOlympicQuestions = [];
 const olympicPointsAdded = 10;
 const olympicMaxQuestions = 4;
-
 let olympicQuestions = [
     {
     number: 1,
@@ -294,45 +197,13 @@ let olympicQuestions = [
     choice4: "Orange",
     },
 ]
-
-// -----functions ------
-
-function olympicQuizInit () {
-    olympicQuiz.classList.remove("olympic-quiz-box");
-    mainPage.classList.add("front-container");
-    olympicQuestionsAsked = 0;
-    olympicScore = 0;
-    availableOlympicQuestions = [...olympicQuestions];
-    nextOlympicQuestion();
-}
-
-function nextOlympicQuestion () {
-    olympicQuestionsAsked++;
-    const olympicArray = Math.floor(Math.random() * availableOlympicQuestions.length);
-    currentOlympicQuestion = availableOlympicQuestions[olympicArray];
-    newOlympicQuestion = currentOlympicQuestion.question
-    olympicQuestionElement.innerHTML = newOlympicQuestion
-
-    newOlympicQuestionChoice1= currentOlympicQuestion.choice1;
-    olympic1.innerHTML = newOlympicQuestionChoice1;
-
-    newOlympicQuestionChoice2= currentOlympicQuestion.choice2;
-    olympic2.innerHTML = newOlympicQuestionChoice2;
-
-    newOlympicQuestionChoice3= currentOlympicQuestion.choice3;
-    olympic3.innerHTML = newOlympicQuestionChoice3;
-
-    newOlympicQuestionChoice4= currentOlympicQuestion.choice4;
-    olympic4.innerHTML = newOlympicQuestionChoice4;
-}
-
+// Olympic quiz variables above
 let currentMovieQuestion = {};
 let MovieScore = 0;
 let MovieQuestionsAsked = 0;
 let availableMovieQuestions = [];
 const moviePointsAdded = 10;
 const movieMaxQuestions = 4;
-
 let movieQuestions = [
     {
     number: 1,
@@ -371,6 +242,112 @@ let movieQuestions = [
     choice4: "T.C. Williams",
     }
 ]
+// Movie quiz variables above
+
+// ------Event Listeners -------
+resetButton.addEventListener("click", init)
+darkMode.addEventListener("click", colorScheme.change)
+button1.addEventListener("click", SoccerQuizInit)
+nflButton.addEventListener("click", nflQuizInit)
+olympicButton.addEventListener("click", olympicQuizInit)
+movieButton.addEventListener("click", movieQuizInit)
+
+// -----functions ------
+function init () {
+    mainPage.classList.remove("front-container");
+    soccerQuiz.classList.add("soccer-quiz-box");
+    nflQuiz.classList.add("nfl-quiz-box");
+    olympicQuiz.classList.add("olympic-quiz-box");
+    movieQuiz.classList.add("movie-quiz-box")
+}
+// resets to  main menu-adding class that removes the quiz boxs
+
+function SoccerQuizInit () {
+    soccerQuiz.classList.remove("soccer-quiz-box");
+    mainPage.classList.add("front-container");
+    soccerQuestionsAsked = 0;
+    soccerScore = 0;
+    availableSoccerQuestions = [...soccerQuestions];
+    nextSoccerQuestion();
+}
+
+function nextSoccerQuestion () {
+    soccerQuestionsAsked++;
+    const soccerArray = Math.floor(Math.random() * availableSoccerQuestions.length);
+    currentSoccerQuestion = availableSoccerQuestions[soccerArray];
+    newSoccerQuestion = currentSoccerQuestion.question
+    soccerQuestionElement.innerHTML = newSoccerQuestion
+
+    newSoccerQuestionChoice1= currentSoccerQuestion.choice1;
+    choice1.innerHTML = newSoccerQuestionChoice1;
+
+    newSoccerQuestionChoice2 = currentSoccerQuestion.choice2;
+    choice2.innerHTML = newSoccerQuestionChoice2;
+
+    newSoccerQuestionChoice3 = currentSoccerQuestion.choice3;
+    choice3.innerHTML = newSoccerQuestionChoice3;
+
+    newSoccerQuestionChoice4 = currentSoccerQuestion.choice4
+    choice4.innerHTML = newSoccerQuestionChoice4
+}
+
+function nflQuizInit () {
+    nflQuiz.classList.remove("nfl-quiz-box");
+    mainPage.classList.add("front-container");
+    nflquestionsAsked = 0;
+    nflScore = 0;
+    availableNflQuestions = [...nflQuestions];
+    nextNflQuestion();
+}
+
+function nextNflQuestion () {
+    nflQuestionsAsked++;
+    const nflArray = Math.floor(Math.random() * availableNflQuestions.length);
+    currentNflQuestion = availableNflQuestions[nflArray];
+    newNflQuestion = currentNflQuestion.question
+    nflQuestionElement.innerHTML = newNflQuestion
+
+    newNflQuestionChoice1= currentNflQuestion.choice1;
+    nfl1.innerHTML = newNflQuestionChoice1;
+
+    newNflQuestionChoice2= currentNflQuestion.choice2;
+    nfl2.innerHTML = newNflQuestionChoice2;
+
+    newNflQuestionChoice3= currentNflQuestion.choice3;
+    nfl3.innerHTML = newNflQuestionChoice3;
+
+    newNflQuestionChoice4= currentNflQuestion.choice4;
+    nfl4.innerHTML = newNflQuestionChoice4;
+}
+
+function olympicQuizInit () {
+    olympicQuiz.classList.remove("olympic-quiz-box");
+    mainPage.classList.add("front-container");
+    olympicQuestionsAsked = 0;
+    olympicScore = 0;
+    availableOlympicQuestions = [...olympicQuestions];
+    nextOlympicQuestion();
+}
+
+function nextOlympicQuestion () {
+    olympicQuestionsAsked++;
+    const olympicArray = Math.floor(Math.random() * availableOlympicQuestions.length);
+    currentOlympicQuestion = availableOlympicQuestions[olympicArray];
+    newOlympicQuestion = currentOlympicQuestion.question
+    olympicQuestionElement.innerHTML = newOlympicQuestion
+
+    newOlympicQuestionChoice1= currentOlympicQuestion.choice1;
+    olympic1.innerHTML = newOlympicQuestionChoice1;
+
+    newOlympicQuestionChoice2= currentOlympicQuestion.choice2;
+    olympic2.innerHTML = newOlympicQuestionChoice2;
+
+    newOlympicQuestionChoice3= currentOlympicQuestion.choice3;
+    olympic3.innerHTML = newOlympicQuestionChoice3;
+
+    newOlympicQuestionChoice4= currentOlympicQuestion.choice4;
+    olympic4.innerHTML = newOlympicQuestionChoice4;
+}
 
 function movieQuizInit () {
     movieQuiz.classList.remove("movie-quiz-box");
@@ -400,6 +377,3 @@ function nextMovieQuestion () {
     newMovieQuestionChoice4= currentMovieQuestion.choice4;
     movie4.innerHTML = newMovieQuestionChoice4;
 }
-
-
-
