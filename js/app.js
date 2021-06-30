@@ -34,7 +34,7 @@ const soccer2 = document.querySelector("#soccer2");
 const soccer3 = document.querySelector("#soccer3");
 const soccer4 = document.querySelector("#soccer4");
 const soccerQuiz = document.querySelector("#soccer-quiz");
-const soccerScoreMessage = document.querySelectorAll("#soccer-score-message");
+const soccerScoreEl = document.querySelector("#soccer-score-message");
 // Soccer quiz query selectors above
 const nflQuestionElement = document.querySelector("#nfl-question-message");
 const nflOptions = Array.from(document.getElementsByClassName(".opt-btn"));
@@ -43,6 +43,7 @@ const nfl2 = document.querySelector("#nfl2");
 const nfl3 = document.querySelector("#nfl3");
 const nfl4 = document.querySelector("#nfl4");
 const nflQuiz = document.querySelector("#nfl-quiz");
+const nflScoreEl = document.querySelector("#nfl-score-message")
 // nfl quiz query selectors above
 const olympicQuestionElement = document.querySelector("#olympic-question-message");
 const olympicOptions = Array.from(document.getElementsByClassName(".opt-btn"));
@@ -51,6 +52,7 @@ const olympic2 = document.querySelector("#olympic2");
 const olympic3 = document.querySelector("#olympic3");
 const olympic4 = document.querySelector("#olympic4");
 const olympicQuiz = document.querySelector("#olympic-quiz");
+const olympicMessageEl = document.querySelector("#olympic-score-message")
 // olympic quiz query selectors above
 const movieQuestionElement = document.querySelector("#movie-question-message");
 const movieOptions = Array.from(document.getElementsByClassName(".opt-btn"));
@@ -64,11 +66,9 @@ const movieScoreEl = document.querySelector("#movie-score-message")
 
 // --------Variables---------
 let currentSoccerQuestion = {};
-let soccerScore = 0;
+let soccerScore = "";
 let soccerQuestionsAsked = 0;
 let availableSoccerQuestions = [];
-const soccerPointsAdded = 0;
-const maxSoccerQuestions = 4;
 let soccerQuestions = [
     {
     number: 1,
@@ -110,13 +110,12 @@ let soccerQuestions = [
     choice4:"Saudi Arabia",
     }
 ];
+
 // soccer quiz variables above
 let currentNflQuestion = {};
-let nflScore = 0;
+let nflScore = "";
 let nflQuestionsAsked = 0;
 let availableNflQuestions = [];
-const nflPointsAdded = 10;
-const nflMaxQuestions = 4;
 let nflQuestions = [
     {
     number: 1,
@@ -155,13 +154,12 @@ let nflQuestions = [
     choice4: "New Orleans Saints",
     }
 ]
+
 // NFL quiz variables above
 let currentOlympicQuestion = {};
-let olympicScore = 0;
+let olympicScore = "";
 let olympicQuestionsAsked = 0;
 let availableOlympicQuestions = [];
-const olympicPointsAdded = 10;
-const olympicMaxQuestions = 4;
 let olympicQuestions = [
     {
     number: 1,
@@ -200,13 +198,12 @@ let olympicQuestions = [
     choice4: "Orange",
     },
 ]
+
 // Olympic quiz variables above
 let currentMovieQuestion = {};
 let movieScore = "";
 let movieQuestionsAsked = 0;
 let availableMovieQuestions = [];
-const moviePointsAdded = 10;
-const movieMaxQuestions = 4;
 let movieQuestions = [
     {
     number: 1,
@@ -245,6 +242,7 @@ let movieQuestions = [
     choice4: "T.C. Williams",
     }
 ]
+
 // Movie quiz variables above
 
 // ------Event Listeners -------
@@ -317,6 +315,25 @@ function nextSoccerQuestion () {
     soccer4.innerHTML = newSoccerQuestionChoice4
 }
 
+function checkSoccerAnswer (e) {
+    if (e.target.value == currentSoccerQuestion.answer) {
+    soccerScore += 25
+    soccerQuestionsAsked +=1
+    } else if (e.target.value !== currentSoccerQuestion.answer) {
+    soccerQuestionsAsked +=1
+    }
+    checkEndSoccerQuiz()
+    nextSoccerQuestion()
+    soccerScoreEl.innerText = `${soccerScore} /100`
+    console.log(soccerScore)
+    console.log(soccerQuestionsAsked)
+}
+
+function checkEndSoccerQuiz () {
+    if (soccerQuestionsAsked === 4){
+    init()
+    }
+}
 
 
 function nflQuizInit () {
@@ -329,7 +346,6 @@ function nflQuizInit () {
 }
 
 function nextNflQuestion () {
-    nflQuestionsAsked++;
     const nflArray = Math.floor(Math.random() * availableNflQuestions.length);
     currentNflQuestion = availableNflQuestions[nflArray];
     newNflQuestion = currentNflQuestion.question
@@ -350,9 +366,22 @@ function nextNflQuestion () {
 
 function checkNflAnswer (e) {
     if (e.target.value == currentNflQuestion.answer) {
-    nflScore++
-    nextNflQuestion()
+    nflScore += 25
+    nflQuestionsAsked +=1
+    } else if (e.target.value !== currentNflQuestion.answer) {
+    nflQuestionsAsked +=1
     }
+    checkEndNflQuiz()
+    nextNflQuestion()
+    nflScoreEl.innerText = `${nflScore} / 100`
+    console.log(nflScore)
+    console.log(nflQuestionsAsked)
+}
+
+function checkEndNflQuiz () {
+    if (nflQuestionsAsked >= 10){
+    init()
+}
 }
 
 function olympicQuizInit () {
@@ -365,7 +394,6 @@ function olympicQuizInit () {
 }
 
 function nextOlympicQuestion () {
-    olympicQuestionsAsked++;
     const olympicArray = Math.floor(Math.random() * availableOlympicQuestions.length);
     currentOlympicQuestion = availableOlympicQuestions[olympicArray];
     newOlympicQuestion = currentOlympicQuestion.question
@@ -386,12 +414,22 @@ function nextOlympicQuestion () {
 
 function checkOlympicAnswer (e) {
     if (e.target.value == currentOlympicQuestion.answer) {
-    olympicScore++
-    console.log("correct")
+        olympicScore += 25
+        olympicQuestionsAsked += 1
     } else if (e.target.value !== currentOlympicQuestion.answer) {
-    console.log("wrong")
+        olympicQuestionsAsked +=1
     }
+    checkEndOlympicQuiz()
     nextOlympicQuestion()
+    olympicMessageEl.innerHTML = `${olympicScore} / 100`
+    console.log(olympicScore)
+    console.log(olympicQuestionsAsked)
+}
+
+function checkEndOlympicQuiz () {
+    if (olympicQuestionsAsked >= 10) {
+        init()
+    }
 }
 
 function movieQuizInit () {
@@ -424,14 +462,14 @@ function nextMovieQuestion () {
 
 function checkMovieAnswer (e) {
     if (e.target.value == currentMovieQuestion.answer) {
-    movieScore += 25
-    movieQuestionsAsked +=1
+        movieScore += 25
+        movieQuestionsAsked +=1
     } else if (e.target.value !== currentMovieQuestion.answer) {
-    movieQuestionsAsked +=1
+        movieQuestionsAsked +=1
     }
-    checkEndQuiz()
+    checkEndMovieQuiz()
     nextMovieQuestion()
-    movieScoreEl.innerText = `${movieScore} /100`
+    movieScoreEl.innerText = `${movieScore} / 100`
     console.log(movieScore)
     console.log(movieQuestionsAsked)
 }
@@ -440,6 +478,8 @@ function checkEndMovieQuiz () {
     if (movieQuestionsAsked === 4){
     init()
 }
+}
+
 // }
 // function renderMovieScore (){
 //     importantMessage.innerHTML = `Good job! You got ${movieScore} points`
