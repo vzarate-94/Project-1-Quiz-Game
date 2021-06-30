@@ -446,7 +446,7 @@ function checkEndOlympicQuiz () {
 function movieQuizInit () {
     movieQuiz.classList.remove("movie-quiz-box");
     mainPage.classList.add("front-container");
-    movieQuestionsAsked = 0;
+    movieQuestionsAsked = 1;
     movieScore = 0;
     availableMovieQuestions = [...movieQuestions];
     nextMovieQuestion();
@@ -456,7 +456,7 @@ function nextMovieQuestion () {
     const movieArray = Math.floor(Math.random() * availableMovieQuestions.length);
     currentMovieQuestion = availableMovieQuestions[movieArray];
     newMovieQuestion = currentMovieQuestion.question
-    movieQuestionElement.innerHTML = newMovieQuestion
+    movieQuestionElement.innerHTML = `${movieQuestionsAsked}: ${newMovieQuestion}`
 
     newMovieQuestionChoice1= currentMovieQuestion.choice1;
     movie1.innerHTML = newMovieQuestionChoice1;
@@ -486,7 +486,7 @@ function checkMovieAnswer (e) {
 }
 
 function checkEndMovieQuiz () {
-    if (movieQuestionsAsked == 4){
+    if (movieQuestionsAsked == 5){
         mainMessageEl.innerText = `GREAT JOB! YOU GOT ${movieScore} / 100`
         
         setTimeout (function() {
