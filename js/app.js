@@ -33,6 +33,7 @@ const soccer2 = document.querySelector("#soccer2");
 const soccer3 = document.querySelector("#soccer3");
 const soccer4 = document.querySelector("#soccer4");
 const soccerQuiz = document.querySelector("#soccer-quiz");
+const soccerScoreMessage = document.querySelectorAll("#soccer-score-message");
 // Soccer quiz query selectors above
 const nflQuestionElement = document.querySelector("#nfl-question-message");
 const nflOptions = Array.from(document.getElementsByClassName(".opt-btn"));
@@ -64,13 +65,13 @@ let currentSoccerQuestion = {};
 let soccerScore = 0;
 let soccerQuestionsAsked = 0;
 let availableSoccerQuestions = [];
-const soccerPointsAdded = 10;
+const soccerPointsAdded = 0;
 const maxSoccerQuestions = 4;
 let soccerQuestions = [
     {
     number: 1,
     question: "What country has won the most World Cups?",
-    answer: "choice2",
+    answer: 2,
     choice1: "Germany",
     choice2: "Brazil",
     choice3: "Italy",
@@ -80,7 +81,7 @@ let soccerQuestions = [
     {
     number: 2,
     question: "Who won the first ever World Cup in 1930?",
-    answer: "choice4",
+    answer: 4,
     choice1: "Brazil",
     choice2: "England",
     choice3:"Germany",
@@ -90,7 +91,7 @@ let soccerQuestions = [
     {
     number: 3,
     question: "Which player has scored a record 15 goals in his World Cup career?",
-    answer: "choice1",
+    answer: 1,
     choice1: "Miroslav Klose - Germany",
     choice2: "Ronaldo - Brazil",
     choice3: "Christiano Ronoaldo - Portugal",
@@ -100,7 +101,7 @@ let soccerQuestions = [
     {
     number: 4,
     question: "Which country will host the 2022 World Cup?",
-    answer: "choice3",
+    answer: 3,
     choice1:"United Arab Emirates",
     choice2:"Kuwait",
     choice3:"Qatar",
@@ -256,6 +257,7 @@ soccer1.addEventListener("click", checkSoccerAnswer)
 soccer2.addEventListener("click", checkSoccerAnswer)
 soccer3.addEventListener("click", checkSoccerAnswer)
 soccer4.addEventListener("click", checkSoccerAnswer)
+// soccer quiz event listeners!
 
 // -----functions ------
 function init () {
@@ -277,7 +279,6 @@ function SoccerQuizInit () {
 }
 
 function nextSoccerQuestion () {
-    soccerQuestionsAsked++;
     const soccerArray = Math.floor(Math.random() * availableSoccerQuestions.length);
     currentSoccerQuestion = availableSoccerQuestions[soccerArray];
     newSoccerQuestion = currentSoccerQuestion.question
@@ -295,9 +296,14 @@ function nextSoccerQuestion () {
     newSoccerQuestionChoice4 = currentSoccerQuestion.choice4
     soccer4.innerHTML = newSoccerQuestionChoice4
 }
-function checkSoccerAnswer () {
-    console.log(checkSoccerAnswer)
+function checkSoccerAnswer (e) {
+    if (e.target.value == currentSoccerQuestion.answer ) {
+    soccerScore++
     nextSoccerQuestion()
+    console.log(soccerScore)
+    } else if (e.target.value !== currentSoccerQuestion.answer) {
+    } 
+    soccerScoreMessage.innerHTML = `${soccerScore} / 4`
 }
 
 function nflQuizInit () {
