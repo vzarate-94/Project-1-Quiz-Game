@@ -8,7 +8,6 @@ const colorScheme = {
         document.querySelector("body").setAttribute("class", colorScheme.dark)
     }
 };
-darkMode.addEventListener("click", colorScheme.change)
 
 
 
@@ -22,31 +21,53 @@ function checkUserColorSchemePreference() {
     }
 };
 
-// ------ Constants ------
-
-// ----- variables -----
+const resetButton = document.querySelector("#reset-button");
+const mainPage = document.querySelector("#front-container");
+const button1 = document.querySelector("#fifa");
+const nflButton = document.querySelector("#nfl");
+const olympicButton = document.querySelector("#olympics");
+const movieButton = document.querySelector("#movie");
+// main page query selectors above!
 const soccerQuestionElement = document.querySelector("#question-message");
 const soccerOptions = Array.from(document.getElementsByClassName(".opt-btn"));
 const choice1 = document.querySelector("#choice1");
 const choice2 = document.querySelector("#choice2");
 const choice3 = document.querySelector("#choice3");
 const choice4 = document.querySelector("#choice4");
-const button1 = document.querySelector("#fifa");
-const mainPage = document.querySelector("#front-container");
 const soccerQuiz = document.querySelector("#soccer-quiz");
-const resetButton = document.querySelector("#reset-button")
+// Soccer quiz query selectors above
+const nflQuestionElement = document.querySelector("#nfl-question-message");
+const nflOptions = Array.from(document.getElementsByClassName(".opt-btn"));
+const nfl1 = document.querySelector("#nfl1");
+const nfl2 = document.querySelector("#nfl2");
+const nfl3 = document.querySelector("#nfl3");
+const nfl4 = document.querySelector("#nfl4");
+const nflQuiz = document.querySelector("#nfl-quiz");
+// nfl quiz query selectors above
+const olympicQuestionElement = document.querySelector("#olympic-question-message");
+const olympicOptions = Array.from(document.getElementsByClassName(".opt-btn"));
+const Olympic1 = document.querySelector("#olympic1");
+const olympic2 = document.querySelector("#olympic2");
+const olympic3 = document.querySelector("#olympic3");
+const olympic4 = document.querySelector("#olympic4");
+const olympicQuiz = document.querySelector("#olympic-quiz");
+// olympic quiz query selectors above
+const movieQuestionElement = document.querySelector("#movie-question-message");
+const movieOptions = Array.from(document.getElementsByClassName(".opt-btn"));
+const movie1 = document.querySelector("#movie1");
+const movie2 = document.querySelector("#movie2");
+const movie3 = document.querySelector("#movie3");
+const movie4 = document.querySelector("#movie4");
+const movieQuiz = document.querySelector("#movie-quiz");
+// movie quiz query selectors above
 
-button1.addEventListener("click", SoccerQuizInit)
-resetButton.addEventListener("click", init)
-
-
+// --------Variables---------
 let currentSoccerQuestion = {};
 let soccerScore = 0;
 let soccerQuestionsAsked = 0;
 let availableSoccerQuestions = [];
 const soccerPointsAdded = 10;
 const maxSoccerQuestions = 4;
-
 let soccerQuestions = [
     {
     number: 1,
@@ -88,70 +109,13 @@ let soccerQuestions = [
     choice4:"Saudi Arabia",
     }
 ];
-// ------Event Listeners -------
-
-
-// -----functions ------
-function init () {
-    mainPage.classList.remove("front-container");
-    soccerQuiz.classList.add("soccer-quiz-box")
-}
-
-function SoccerQuizInit () {
-    soccerQuiz.classList.remove("soccer-quiz-box");
-    mainPage.classList.add("front-container")
-    soccerQuestionsAsked = 0;
-    soccerScore = 0;
-    availableSoccerQuestions = [...soccerQuestions];
-    nextSoccerQuestion();
-}
-
-function nextSoccerQuestion () {
-    soccerQuestionsAsked++;
-    const soccerArray = Math.floor(Math.random() * availableSoccerQuestions.length);
-    currentSoccerQuestion = availableSoccerQuestions[soccerArray];
-    newSoccerQuestion = currentSoccerQuestion.question
-    soccerQuestionElement.innerHTML = newSoccerQuestion
-
-    newSoccerQuestionChoice1= currentSoccerQuestion.choice1;
-    choice1.innerHTML = newSoccerQuestionChoice1;
-
-    newSoccerQuestionChoice2 = currentSoccerQuestion.choice2;
-    choice2.innerHTML = newSoccerQuestionChoice2;
-
-    newSoccerQuestionChoice3 = currentSoccerQuestion.choice3;
-    choice3.innerHTML = newSoccerQuestionChoice3;
-
-    newSoccerQuestionChoice4 = currentSoccerQuestion.choice4
-    choice4.innerHTML = newSoccerQuestionChoice4
-}
-
-//     soccerOptions.forEach(choice => {
-//         const soccerNumber = choice.dataset["number"]
-//         choice.innerHTML = newSoccerQuestion["choice" + number]
-//         console.log(newSoccerQuestion["choice" + number])
-//     });
-// };
-
-
-
-const nflQuestionElement = document.querySelector("#nfl-question-message");
-const nflOptions = Array.from(document.getElementsByClassName(".opt-btn"));
-const nfl1 = document.querySelector("#nfl1");
-const nfl2 = document.querySelector("#nfl2");
-const nfl3 = document.querySelector("#nfl3");
-const nfl4 = document.querySelector("#nfl4");
-const nflButton = document.querySelector("#nfl")
-
-nflButton.addEventListener("click", nflQuizInit)
-
+// soccer quiz variables above
 let currentNflQuestion = {};
 let nflScore = 0;
 let nflQuestionsAsked = 0;
 let availableNflQuestions = [];
 const nflPointsAdded = 10;
 const nflMaxQuestions = 4;
-
 let nflQuestions = [
     {
     number: 1,
@@ -190,10 +154,62 @@ let nflQuestions = [
     choice4: "New Orleans Saints",
     }
 ]
+
+// ------Event Listeners -------
+resetButton.addEventListener("click", init)
+darkMode.addEventListener("click", colorScheme.change)
+button1.addEventListener("click", SoccerQuizInit)
+nflButton.addEventListener("click", nflQuizInit)
+olympicButton.addEventListener("click", olympicQuizInit)
+movieButton.addEventListener("click", movieQuizInit)
+
+// -----functions ------
+
+function init () {
+    mainPage.classList.remove("front-container");
+    soccerQuiz.classList.add("soccer-quiz-box");
+    nflQuiz.classList.add("nfl-quiz-box");
+    olympicQuiz.classList.add("olympic-quiz-box");
+    movieQuiz.classList.add("movie-quiz-box")
+}
+
+function SoccerQuizInit () {
+    soccerQuiz.classList.remove("soccer-quiz-box");
+    mainPage.classList.add("front-container");
+    soccerQuestionsAsked = 0;
+    soccerScore = 0;
+    availableSoccerQuestions = [...soccerQuestions];
+    nextSoccerQuestion();
+}
+
+function nextSoccerQuestion () {
+    soccerQuestionsAsked++;
+    const soccerArray = Math.floor(Math.random() * availableSoccerQuestions.length);
+    currentSoccerQuestion = availableSoccerQuestions[soccerArray];
+    newSoccerQuestion = currentSoccerQuestion.question
+    soccerQuestionElement.innerHTML = newSoccerQuestion
+
+    newSoccerQuestionChoice1= currentSoccerQuestion.choice1;
+    choice1.innerHTML = newSoccerQuestionChoice1;
+
+    newSoccerQuestionChoice2 = currentSoccerQuestion.choice2;
+    choice2.innerHTML = newSoccerQuestionChoice2;
+
+    newSoccerQuestionChoice3 = currentSoccerQuestion.choice3;
+    choice3.innerHTML = newSoccerQuestionChoice3;
+
+    newSoccerQuestionChoice4 = currentSoccerQuestion.choice4
+    choice4.innerHTML = newSoccerQuestionChoice4
+}
+
+
+
 // ------Event Listeners -------
 // -----functions ------
 
 function nflQuizInit () {
+    nflQuiz.classList.remove("nfl-quiz-box");
+    mainPage.classList.add("front-container");
     nflquestionsAsked = 0;
     nflScore = 0;
     availableNflQuestions = [...nflQuestions];
@@ -228,17 +244,10 @@ function nextNflQuestion () {
 //     });
 // };
 
-nflQuizInit()
 
-const olympicQuestionElement = document.querySelector("#olympic-question-message");
-const olympicOptions = Array.from(document.getElementsByClassName(".opt-btn"));
-const Olympic1 = document.querySelector("#olympic1");
-const olympic2 = document.querySelector("#olympic2");
-const olympic3 = document.querySelector("#olympic3");
-const olympic4 = document.querySelector("#olympic4");
-const olympicButton = document.querySelector("#olympics");
 
-olympicButton.addEventListener("click", olympicQuizInit)
+
+
 
 let currentOlympicQuestion = {};
 let olympicScore = 0;
@@ -285,10 +294,12 @@ let olympicQuestions = [
     choice4: "Orange",
     },
 ]
-// ------Event Listeners -------
+
 // -----functions ------
 
 function olympicQuizInit () {
+    olympicQuiz.classList.remove("olympic-quiz-box");
+    mainPage.classList.add("front-container");
     olympicQuestionsAsked = 0;
     olympicScore = 0;
     availableOlympicQuestions = [...olympicQuestions];
@@ -314,25 +325,6 @@ function nextOlympicQuestion () {
     newOlympicQuestionChoice4= currentOlympicQuestion.choice4;
     olympic4.innerHTML = newOlympicQuestionChoice4;
 }
-
-//     soccerOptions.forEach(choice => {
-//         const soccerNumber = choice.dataset["number"]
-//         choice.innerHTML = newSoccerQuestion["choice" + number]
-//         console.log(newSoccerQuestion["choice" + number])
-//     });
-// };
-
-olympicQuizInit()
-
-const movieQuestionElement = document.querySelector("#movie-question-message");
-const movieOptions = Array.from(document.getElementsByClassName(".opt-btn"));
-const movie1 = document.querySelector("#movie1");
-const movie2 = document.querySelector("#movie2");
-const movie3 = document.querySelector("#movie3");
-const movie4 = document.querySelector("#movie4");
-const movieButton = document.querySelector("#movie");
-
-movieButton.addEventListener("click", movieQuizInit)
 
 let currentMovieQuestion = {};
 let MovieScore = 0;
@@ -379,10 +371,10 @@ let movieQuestions = [
     choice4: "T.C. Williams",
     }
 ]
-// ------Event Listeners -------
-// -----functions ------
 
 function movieQuizInit () {
+    movieQuiz.classList.remove("movie-quiz-box");
+    mainPage.classList.add("front-container");
     movieQuestionsAsked = 0;
     movieScore = 0;
     availableMovieQuestions = [...movieQuestions];
@@ -409,12 +401,5 @@ function nextMovieQuestion () {
     movie4.innerHTML = newMovieQuestionChoice4;
 }
 
-//     soccerOptions.forEach(choice => {
-//         const soccerNumber = choice.dataset["number"]
-//         choice.innerHTML = newSoccerQuestion["choice" + number]
-//         console.log(newSoccerQuestion["choice" + number])
-//     });
-// };
 
-movieQuizInit()
 
