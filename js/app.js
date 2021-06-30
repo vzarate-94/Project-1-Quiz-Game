@@ -34,8 +34,10 @@ const choice4 = document.querySelector("#choice4");
 const button1 = document.querySelector("#fifa");
 const mainPage = document.querySelector("#front-container");
 const soccerQuiz = document.querySelector("#soccer-quiz");
+const resetButton = document.querySelector("#reset-button")
 
 button1.addEventListener("click", SoccerQuizInit)
+resetButton.addEventListener("click", init)
 
 
 let currentSoccerQuestion = {};
@@ -90,13 +92,14 @@ let soccerQuestions = [
 
 
 // -----functions ------
-// init () {
-//     mainPage.classList.remove("front-container")
-// }
+function init () {
+    mainPage.classList.remove("front-container");
+    soccerQuiz.classList.add("soccer-quiz-box")
+}
 
 function SoccerQuizInit () {
     soccerQuiz.classList.remove("soccer-quiz-box");
-    // mainPage.classList.add("front-container")
+    mainPage.classList.add("front-container")
     soccerQuestionsAsked = 0;
     soccerScore = 0;
     availableSoccerQuestions = [...soccerQuestions];
@@ -414,3 +417,4 @@ function nextMovieQuestion () {
 // };
 
 movieQuizInit()
+
