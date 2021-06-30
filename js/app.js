@@ -19,6 +19,7 @@ function checkUserColorSchemePreference() {
     }
 };
 
+const mainMessageEl = document.querySelector("#main-menu")
 const resetButton = document.querySelector("#reset-button");
 const mainPage = document.querySelector("#front-container");
 const button1 = document.querySelector("#fifa");
@@ -55,7 +56,7 @@ const olympicQuiz = document.querySelector("#olympic-quiz");
 const olympicMessageEl = document.querySelector("#olympic-score-message")
 // olympic quiz query selectors above
 const movieQuestionElement = document.querySelector("#movie-question-message");
-const movieOptions = Array.from(document.getElementsByClassName(".opt-btn"));
+const movieOptions = document.querySelectorAll(".opt-btn");
 const movie1 = document.querySelector("#movie1");
 const movie2 = document.querySelector("#movie2");
 const movie3 = document.querySelector("#movie3");
@@ -275,6 +276,7 @@ movie4.addEventListener("click", checkMovieAnswer)
 
 // -----functions ------
 function init () {
+    mainMessageEl.innerHTML = "Welcome to Sports Trivia Central"
     mainPage.classList.remove("front-container");
     soccerQuiz.classList.add("soccer-quiz-box");
     nflQuiz.classList.add("nfl-quiz-box");
@@ -475,24 +477,13 @@ function checkMovieAnswer (e) {
 }
 
 function checkEndMovieQuiz () {
-    if (movieQuestionsAsked === 4){
-    init()
+    if (movieQuestionsAsked == 4){
+        mainMessageEl.innerText = `GREAT JOB! YOU GOT ${movieScore} / 100`
+        
+        setTimeout (function() {
+            movieQuiz.classList.add("movie-quiz-box")
+            init()
+        },2000)
+    }
 }
-}
 
-// }
-// function renderMovieScore (){
-//     importantMessage.innerHTML = `Good job! You got ${movieScore} points`
-// }
-
-
-//         if (e.target.value !== currentMovieQuestion.answer)
-//     }
-    
-//     movieQuestionsAsked++
-//     } else if (e.target.value !== currentMovieQuestion.answer) {
-//     console.log("wrong!")
-//     movieQuestionsAsked++
-//     }
-//     nextMovieQuestion()
-// }console.log(movieScore)
