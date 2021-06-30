@@ -25,6 +25,7 @@ const button1 = document.querySelector("#fifa");
 const nflButton = document.querySelector("#nfl");
 const olympicButton = document.querySelector("#olympics");
 const movieButton = document.querySelector("#movie");
+const importantMessage = document.querySelector("#important-message")
 // main page query selectors above!
 const soccerQuestionElement = document.querySelector("#question-message");
 const soccerOptions = Array.from(document.getElementsByClassName(".opt-btn"));
@@ -58,6 +59,7 @@ const movie2 = document.querySelector("#movie2");
 const movie3 = document.querySelector("#movie3");
 const movie4 = document.querySelector("#movie4");
 const movieQuiz = document.querySelector("#movie-quiz");
+const movieScoreEl = document.querySelector("#movie-score-message")
 // movie quiz query selectors above
 
 // --------Variables---------
@@ -200,8 +202,8 @@ let olympicQuestions = [
 ]
 // Olympic quiz variables above
 let currentMovieQuestion = {};
-let MovieScore = 0;
-let MovieQuestionsAsked = 0;
+let movieScore = "";
+let movieQuestionsAsked = 0;
 let availableMovieQuestions = [];
 const moviePointsAdded = 10;
 const movieMaxQuestions = 4;
@@ -280,6 +282,10 @@ function init () {
     nflQuiz.classList.add("nfl-quiz-box");
     olympicQuiz.classList.add("olympic-quiz-box");
     movieQuiz.classList.add("movie-quiz-box")
+    soccerScore = 0
+    nflScore = 0
+    olympicScore = 0
+    movieScore = 0
 }
 // resets to  main menu-adding class that removes the quiz boxs
 
@@ -310,13 +316,7 @@ function nextSoccerQuestion () {
     newSoccerQuestionChoice4 = currentSoccerQuestion.choice4
     soccer4.innerHTML = newSoccerQuestionChoice4
 }
-function checkSoccerAnswer (e) {
-    if (e.target.value == currentSoccerQuestion.answer ) {
-    soccerScore++
-    nextSoccerQuestion()
-    } else 
-    console.log(soccerScore)
-    }
+
 
 
 function nflQuizInit () {
@@ -387,8 +387,11 @@ function nextOlympicQuestion () {
 function checkOlympicAnswer (e) {
     if (e.target.value == currentOlympicQuestion.answer) {
     olympicScore++
-    nextOlympicQuestion()
+    console.log("correct")
+    } else if (e.target.value !== currentOlympicQuestion.answer) {
+    console.log("wrong")
     }
+    nextOlympicQuestion()
 }
 
 function movieQuizInit () {
@@ -401,7 +404,6 @@ function movieQuizInit () {
 }
 
 function nextMovieQuestion () {
-    movieQuestionsAsked++;
     const movieArray = Math.floor(Math.random() * availableMovieQuestions.length);
     currentMovieQuestion = availableMovieQuestions[movieArray];
     newMovieQuestion = currentMovieQuestion.question
@@ -421,11 +423,36 @@ function nextMovieQuestion () {
 }
 
 function checkMovieAnswer (e) {
-    if (e.target.value == currentMovieQuestion.answer ) {
-    MovieScore++
-    console.log("correct")
+    if (e.target.value == currentMovieQuestion.answer) {
+    movieScore += 25
+    movieQuestionsAsked +=1
     } else if (e.target.value !== currentMovieQuestion.answer) {
-    console.log("wrong!")
+    movieQuestionsAsked +=1
     }
+    checkEndQuiz()
     nextMovieQuestion()
+    movieScoreEl.innerText = `${movieScore} /100`
+    console.log(movieScore)
+    console.log(movieQuestionsAsked)
 }
+
+function checkEndMovieQuiz () {
+    if (movieQuestionsAsked === 4){
+    init()
+}
+// }
+// function renderMovieScore (){
+//     importantMessage.innerHTML = `Good job! You got ${movieScore} points`
+// }
+
+
+//         if (e.target.value !== currentMovieQuestion.answer)
+//     }
+    
+//     movieQuestionsAsked++
+//     } else if (e.target.value !== currentMovieQuestion.answer) {
+//     console.log("wrong!")
+//     movieQuestionsAsked++
+//     }
+//     nextMovieQuestion()
+// }console.log(movieScore)
