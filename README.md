@@ -10,20 +10,18 @@ Instructions.
 1. Upon initializing the game, the user will be taken to the main manu page. Here the user will be given 4 sports categories to choose from.
 ![alt text](https://imgur.com/U7jBaY4)
 
-1. The user will then click on a category, and immideately be taken to their first quiz.
+2. The user will then click on a category, and immideately be taken to their first quiz.
 ![alt text](https://imgur.com/u83uypQ)
 
-2. All categories consist of a 5 question quiz, each question being worth 20 points. 
+3. All categories consist of a 5 question quiz, each question being worth 20 points. 
 
-3. At the end, the user will be told his score out of the possible 100 points. 
+4. At the end, the user will be told his score out of the possible 100 points. 
 ![alt text](https://imgur.com/u83uypQ)
 
-4. The home page will automatically come up shortly after finishing your last question from the previous quiz. The user will now have the option to try any of the 4 categories again as many times as they please.
+5. The home page will automatically come up shortly after finishing your last question from the previous quiz. The user will now have the option to try any of the 4 categories again as many times as they please.
 
-5. At the top right corner of the application, the user will find a Dark button, the user can click on it to switch between light and dark mode.
+6. At the top right corner of the application, the user will find a Dark button, the user can click on it to switch between light and dark mode.
 ![alt text](https://imgur.com/OxJUIlP)
 
-Languages:
-    1.Javascript
-    2.CSS
-    3.HTML
+Languages: Javascript, CSS, HTML
+
