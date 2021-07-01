@@ -20,6 +20,7 @@ body {
     margin: 0;
 }
 
+
 nav {
     align-items: center;
     background-color: rgb(56, 102, 187);
@@ -47,6 +48,7 @@ main,
     color: rgb(145, 2, 2);
     background-color: darkgray;
     border-radius: 8px;
+    border: 10px solid;
     justify-content: center;
     align-items: center;
 }
@@ -82,7 +84,6 @@ main .choice {
     border-radius: 6px;
     border: 2px solid;
     display: flex;
-    flex-direction: ;
     flex-wrap: inherit;
     justify-content: left;
     cursor: pointer;
@@ -101,7 +102,7 @@ main .btn {
     margin-top: 20px;
     font-size: 20px;
     border-radius: 13px;
-    border: 3px solid;
+    border: 2px solid;
     flex-wrap: inherit;
     justify-content: center;
     cursor: pointer;
@@ -135,4 +136,14 @@ main .btn:hover {
 
 .front-container {
     display: none;
+}
+
+body.dark {
+    background-color: rgb(189, 213, 255);
+    color: rgb(56, 102, 187, .5);
+
+}
+
+#main-menu.dark {
+    color: darkblue;
 }

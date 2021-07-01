@@ -18,6 +18,7 @@ function checkUserColorSchemePreference() {
         colorScheme.change()
     }
 };
+console.log(darkMode)
 
 const mainMessageEl = document.querySelector("#main-menu")
 const resetButton = document.querySelector("#reset-button");
