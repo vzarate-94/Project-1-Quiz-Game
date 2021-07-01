@@ -293,7 +293,7 @@ function init () {
 function SoccerQuizInit () {
     soccerQuiz.classList.remove("soccer-quiz-box");
     mainPage.classList.add("front-container");
-    soccerQuestionsAsked = 0;
+    soccerQuestionsAsked = 1;
     soccerScore = 0;
     availableSoccerQuestions = [...soccerQuestions];
     nextSoccerQuestion();
@@ -303,7 +303,7 @@ function nextSoccerQuestion () {
     const soccerArray = Math.floor(Math.random() * availableSoccerQuestions.length);
     currentSoccerQuestion = availableSoccerQuestions[soccerArray];
     newSoccerQuestion = currentSoccerQuestion.question
-    soccerQuestionElement.innerHTML = newSoccerQuestion
+    soccerQuestionElement.innerHTML = `${soccerQuestionsAsked}: ${newSoccerQuestion}`
 
     newSoccerQuestionChoice1= currentSoccerQuestion.choice1;
     soccer1.innerHTML = newSoccerQuestionChoice1;
@@ -333,11 +333,12 @@ function checkSoccerAnswer (e) {
 }
 
 function checkEndSoccerQuiz () {
-    if (soccerQuestionsAsked == 4){
+    if (soccerQuestionsAsked == 5){
         mainMessageEl.innerText = `GREAT JOB! YOU GOT ${soccerScore} / 100`
             setTimeout (function() {
                 init()
             },2000)
+        soccerQuiz.classList.add("soccer-quiz-box");
         }
     }
 
@@ -345,7 +346,7 @@ function checkEndSoccerQuiz () {
 function nflQuizInit () {
     nflQuiz.classList.remove("nfl-quiz-box");
     mainPage.classList.add("front-container");
-    nflquestionsAsked = 1;
+    nflQuestionsAsked = 1;
     nflScore = 0;
     availableNflQuestions = [...nflQuestions];
     nextNflQuestion();
@@ -380,8 +381,6 @@ function checkNflAnswer (e) {
     checkEndNflQuiz()
     nextNflQuestion()
     nflScoreEl.innerText = `${nflScore} / 100`
-    console.log(nflScore)
-    console.log(nflQuestionsAsked)
 }
 
 function checkEndNflQuiz () {
@@ -432,8 +431,6 @@ function checkOlympicAnswer (e) {
     checkEndOlympicQuiz()
     nextOlympicQuestion()
     olympicMessageEl.innerHTML = `${olympicScore} / 100`
-    console.log(olympicScore)
-    console.log(olympicQuestionsAsked)
 }
 
 function checkEndOlympicQuiz () {
@@ -484,8 +481,6 @@ function checkMovieAnswer (e) {
     checkEndMovieQuiz()
     nextMovieQuestion()
     movieScoreEl.innerText = `${movieScore} / 100`
-    console.log(movieScore)
-    console.log(movieQuestionsAsked)
 }
 
 function checkEndMovieQuiz () {
@@ -494,7 +489,7 @@ function checkEndMovieQuiz () {
         setTimeout (function() {
             init()
         },2000)
-        movieQuiz.classList.add("movie-quiz-box")
+    movieQuiz.classList.add("movie-quiz-box")
     }
 }
 
