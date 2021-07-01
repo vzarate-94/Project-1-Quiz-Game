@@ -2,13 +2,14 @@ Hello! Welcome to Sports Trivia Central, here you'll be able to test out your kn
 
 Follow this link to start the game! [link](https://victorssportstrivia.netlify.app/)
 
-The idea for this quiz app comes from the classic jumbo tron quizes every sports teams has during a break at a sporting event. My idea was instead of only one fan being able to play, why not give the link to all fans in attendance and give everyone a chance to play! 
+The idea for this quiz app comes from the classic jumbotron quizes every sports teams has during a break at a in play to entertain the fans. My idea was instead of only one fan being able to play, why not give the link to all fans in attendance and give everyone a chance to play on their phones for a chance to win a price! 
 
 
 Instructions.
 
 1. Upon initializing the game, the user will be taken to the main manu page. Here the user will be given 4 sports categories to choose from.
-![alt text](https://imgur.com/U7jBaY4)
+
+   'src=https://imgur.com/U7jBaY4'
 
 2. The user will then click on a category, and immideately be taken to their first quiz.
 ![alt text](https://imgur.com/u83uypQ)
