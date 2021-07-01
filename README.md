@@ -8,6 +8,8 @@ The idea for this quiz app comes from the classic jumbo tron quizes every sports
 Instructions.
 
 1. Upon initializing the game, the user will be taken to the main manu page. Here the user will be given 4 sports categories to choose from.
+![alt text](https://imgur.com/U7jBaY4)
+
 2. The user will then click on a category, and immideately be taken to their first quiz.
 3. All categories consist of a 5 question quiz, each question being worth 20 points. 
 4. At the end, the user will be told his score out of the possible 100 points. 
