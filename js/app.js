@@ -345,7 +345,7 @@ function checkEndSoccerQuiz () {
 function nflQuizInit () {
     nflQuiz.classList.remove("nfl-quiz-box");
     mainPage.classList.add("front-container");
-    nflquestionsAsked = 0;
+    nflquestionsAsked = 1;
     nflScore = 0;
     availableNflQuestions = [...nflQuestions];
     nextNflQuestion();
@@ -355,7 +355,7 @@ function nextNflQuestion () {
     const nflArray = Math.floor(Math.random() * availableNflQuestions.length);
     currentNflQuestion = availableNflQuestions[nflArray];
     newNflQuestion = currentNflQuestion.question
-    nflQuestionElement.innerHTML = newNflQuestion
+    nflQuestionElement.innerHTML = `${nflQuestionsAsked}: ${newNflQuestion}`
 
     newNflQuestionChoice1= currentNflQuestion.choice1;
     nfl1.innerHTML = newNflQuestionChoice1;
@@ -385,18 +385,19 @@ function checkNflAnswer (e) {
 }
 
 function checkEndNflQuiz () {
-    if (nflQuestionsAsked == 4){
+    if (nflQuestionsAsked == 5){
         mainMessageEl.innerText = `GREAT JOB! YOU GOT ${nflScore} / 100`
             setTimeout (function() {
                 init()
             },2000)
+        nflQuiz.classList.add("nfl-quiz-box");
         }
     }
 
 function olympicQuizInit () {
     olympicQuiz.classList.remove("olympic-quiz-box");
     mainPage.classList.add("front-container");
-    olympicQuestionsAsked = 0;
+    olympicQuestionsAsked = 1;
     olympicScore = 0;
     availableOlympicQuestions = [...olympicQuestions];
     nextOlympicQuestion();
@@ -406,7 +407,7 @@ function nextOlympicQuestion () {
     const olympicArray = Math.floor(Math.random() * availableOlympicQuestions.length);
     currentOlympicQuestion = availableOlympicQuestions[olympicArray];
     newOlympicQuestion = currentOlympicQuestion.question
-    olympicQuestionElement.innerHTML = newOlympicQuestion
+    olympicQuestionElement.innerHTML = `${olympicQuestionsAsked}: ${newOlympicQuestion}`
 
     newOlympicQuestionChoice1= currentOlympicQuestion.choice1;
     olympic1.innerHTML = newOlympicQuestionChoice1;
@@ -436,11 +437,12 @@ function checkOlympicAnswer (e) {
 }
 
 function checkEndOlympicQuiz () {
-    if (olympicQuestionsAsked == 4){
+    if (olympicQuestionsAsked == 5){
         mainMessageEl.innerText = `GREAT JOB! YOU GOT ${olympicScore} / 100`
         setTimeout (function() {
             init()
         },2000)
+        olympicQuiz.classList.add("olympic-quiz-box");
     }
 }
 
