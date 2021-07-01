@@ -28,6 +28,7 @@ const nflButton = document.querySelector("#nfl")
 const olympicButton = document.querySelector("#olympics")
 const movieButton = document.querySelector("#movie")
 const importantMessage = document.querySelector("#important-message")
+const tickTock = new Audio('../audio/mixkit-tick-tock-clock-timer-1045.wav')
 // main page query selectors above!
 const soccerQuestionElement = document.querySelector("#question-message")
 const soccerOptions = Array.from(document.getElementsByClassName(".opt-btn"))
@@ -297,6 +298,9 @@ function SoccerQuizInit () {
     soccerScore = 0
     availableSoccerQuestions = [...soccerQuestions]
     nextSoccerQuestion()
+    setTimeout(function(){
+        tickTock.play()
+    },10)
 }
 
 function nextSoccerQuestion () {
@@ -316,6 +320,7 @@ function nextSoccerQuestion () {
 
     newSoccerQuestionChoice4 = currentSoccerQuestion.choice4
     soccer4.innerHTML = newSoccerQuestionChoice4
+
 }
 
 function checkSoccerAnswer (e) {
@@ -370,6 +375,10 @@ function nextNflQuestion () {
 
     newNflQuestionChoice4= currentNflQuestion.choice4
     nfl4.innerHTML = newNflQuestionChoice4
+
+    setTimeout(function(){
+        tickTock.play()
+    },10)
 }
 
 function checkNflAnswer (e) {
