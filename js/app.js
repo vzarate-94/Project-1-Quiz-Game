@@ -275,6 +275,7 @@ function checkUserColorSchemePreference() {
         colorScheme.change()
     }
 }
+// Above code changes the dark mode setting.
 
 function init () {
     mainMessageEl.innerHTML = "Welcome to Sports Trivia Central"
@@ -288,7 +289,7 @@ function init () {
     olympicScore = 0
     movieScore = 0
 }
-// resets to  main menu-adding class that removes the quiz boxs
+// Resets to  main menu-adding class that removes the quiz boxs
 
 function SoccerQuizInit () {
     soccerQuiz.classList.remove("soccer-quiz-box")
@@ -310,6 +311,7 @@ function SoccerQuizInit () {
         }
     }, 1000)
 }
+// Initializes the quiz board, makes the main menu display:none. starts the tick tock sound and starts timer for soccer quiz
 
 function nextSoccerQuestion () {
     const soccerArray = Math.floor(Math.random() * availableSoccerQuestions.length)
@@ -329,6 +331,7 @@ function nextSoccerQuestion () {
     newSoccerQuestionChoice4 = currentSoccerQuestion.choice4
     soccer4.innerHTML = newSoccerQuestionChoice4
 }
+// gets random Soccer question and puts the question and choices on to the quiz board.
 
 function checkSoccerAnswer (e) {
     if (e.target.value == currentSoccerQuestion.answer) {
@@ -341,6 +344,7 @@ function checkSoccerAnswer (e) {
     nextSoccerQuestion()
     soccerScoreEl.innerText = `${soccerScore} /100`
 }
+// Checking for the correct answer. Will also go to checkEndSoccerQuiz function to see if all 5 questions have been asked
 
 function checkEndSoccerQuiz () {
     if (soccerQuestionsAsked == 5){
@@ -353,6 +357,7 @@ function checkEndSoccerQuiz () {
         confetti.start(2000)
     }
 }
+// if all 5 questions have been asked, the quiz board disappears and a score will show up
 
 function nflQuizInit () {
     nflQuiz.classList.remove("nfl-quiz-box")
@@ -556,3 +561,4 @@ function timesUp () {
         init()
     }, 3000)
 }
+// Function to check the timer! if timer is up the game will finish!
