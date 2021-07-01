@@ -339,6 +339,7 @@ function checkEndSoccerQuiz () {
                 init()
             },2000)
         soccerQuiz.classList.add("soccer-quiz-box");
+        confetti.start(2000)
         }
     }
 
@@ -390,6 +391,7 @@ function checkEndNflQuiz () {
                 init()
             },2000)
         nflQuiz.classList.add("nfl-quiz-box");
+        confetti.start(2000)
         }
     }
 
@@ -440,6 +442,7 @@ function checkEndOlympicQuiz () {
             init()
         },2000)
         olympicQuiz.classList.add("olympic-quiz-box");
+        confetti.start(2000)
     }
 }
 
@@ -490,6 +493,7 @@ function checkEndMovieQuiz () {
             init()
         },2000)
     movieQuiz.classList.add("movie-quiz-box")
+    confetti.start(2000)
     }
 }
 
