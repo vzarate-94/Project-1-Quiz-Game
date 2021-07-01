@@ -147,3 +147,10 @@ body.dark {
 #main-menu.dark {
     color: darkblue;
 }
+
+@media only screen and (min-width: 768px) {
+    .quiz-box {
+width: 400px;
+    }
+}
+
