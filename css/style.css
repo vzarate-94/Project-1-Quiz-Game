@@ -20,7 +20,6 @@ body {
     margin: 0;
 }
 
-
 nav {
     align-items: center;
     background-color: rgb(56, 102, 187);
@@ -29,6 +28,7 @@ nav {
     height: 45px;
     flex-direction: row;
 }
+
 #dark-mode-button {
     border-radius: 20px;
     background-color: black;
@@ -36,6 +36,20 @@ nav {
     margin-right: 5px;
 }
 
+#timer {
+    display: flex;
+    margin: auto;
+    background-color: darkgray;
+    color: black;
+    border:5px solid rgb(145, 2, 2);
+    border-radius: 5px;
+    font-size: 30px;
+    width: 55px;
+    height: 45px;
+    margin-bottom: 16px;
+    text-align: center;
+    justify-content: center;
+}
 
 main,
 .quiz-box {
@@ -52,6 +66,7 @@ main,
     justify-content: center;
     align-items: center;
 }
+
 #question-message,
 #intro-message {
     padding-top: 10px;
@@ -90,7 +105,6 @@ main .choice {
     align-items: center;
 }
 
-
 .opt-btn,
 main .btn {
     background-color: rgb(56, 102, 187, .5);
@@ -100,7 +114,7 @@ main .btn {
     display: flex;
     position: relative;
     margin-top: 20px;
-    font-size: 20px;
+    font-size: 24px;
     border-radius: 13px;
     border: 2px solid;
     flex-wrap: inherit;
@@ -115,6 +129,7 @@ main .btn {
 main .next {
     margin-top: 15px;
 }
+
 .opt-btn:hover,
 main .btn:hover {
     background-color: rgba(25, 25, 104, 0.81);
@@ -153,4 +168,3 @@ body.dark {
 width: 300px;
     }
 }
-

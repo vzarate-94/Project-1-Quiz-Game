@@ -7,19 +7,9 @@ const colorScheme = {
         colorScheme.dark = colorScheme.dark ? "" : "dark"
         document.querySelector("body").setAttribute("class", colorScheme.dark)
     }
-};
-
-checkUserColorSchemePreference();
-
-function checkUserColorSchemePreference() {
-    if (
-        window.matchMedia("(prefers-color-scheme:dark)").matches && !colorScheme.dark
-    ) {
-        colorScheme.change()
-    }
 }
 
-
+const countdownEl = document.querySelector("#timer")
 const mainMessageEl = document.querySelector("#main-menu")
 const resetButton = document.querySelector("#reset-button")
 const mainPage = document.querySelector("#front-container")
@@ -29,9 +19,10 @@ const olympicButton = document.querySelector("#olympics")
 const movieButton = document.querySelector("#movie")
 const importantMessage = document.querySelector("#important-message")
 const tickTock = new Audio('../audio/mixkit-bell-tick-tock-timer-1046.wav')
+let timer 
+let countDown
 // main page query selectors above!
 const soccerQuestionElement = document.querySelector("#question-message")
-const soccerOptions = Array.from(document.getElementsByClassName(".opt-btn"))
 const soccer1 = document.querySelector("#soccer1")
 const soccer2 = document.querySelector("#soccer2")
 const soccer3 = document.querySelector("#soccer3")
@@ -40,7 +31,6 @@ const soccerQuiz = document.querySelector("#soccer-quiz")
 const soccerScoreEl = document.querySelector("#soccer-score-message")
 // Soccer quiz query selectors above
 const nflQuestionElement = document.querySelector("#nfl-question-message")
-const nflOptions = Array.from(document.getElementsByClassName(".opt-btn"))
 const nfl1 = document.querySelector("#nfl1")
 const nfl2 = document.querySelector("#nfl2")
 const nfl3 = document.querySelector("#nfl3")
@@ -49,7 +39,6 @@ const nflQuiz = document.querySelector("#nfl-quiz")
 const nflScoreEl = document.querySelector("#nfl-score-message")
 // nfl quiz query selectors above
 const olympicQuestionElement = document.querySelector("#olympic-question-message")
-const olympicOptions = Array.from(document.getElementsByClassName(".opt-btn"))
 const olympic1 = document.querySelector("#olympic1")
 const olympic2 = document.querySelector("#olympic2")
 const olympic3 = document.querySelector("#olympic3")
@@ -58,7 +47,6 @@ const olympicQuiz = document.querySelector("#olympic-quiz")
 const olympicMessageEl = document.querySelector("#olympic-score-message")
 // olympic quiz query selectors above
 const movieQuestionElement = document.querySelector("#movie-question-message")
-const movieOptions = document.querySelectorAll(".opt-btn")
 const movie1 = document.querySelector("#movie1")
 const movie2 = document.querySelector("#movie2")
 const movie3 = document.querySelector("#movie3")
@@ -68,6 +56,8 @@ const movieScoreEl = document.querySelector("#movie-score-message")
 // movie quiz query selectors above
 
 // --------Variables---------
+
+
 let currentSoccerQuestion = {}
 let soccerScore = ""
 let soccerQuestionsAsked = 0
@@ -245,7 +235,6 @@ let movieQuestions = [
     choice4: "T.C. Williams",
     }
 ]
-
 // Movie quiz variables above
 
 // ------Event Listeners -------
@@ -277,6 +266,16 @@ movie3.addEventListener("click", checkMovieAnswer)
 movie4.addEventListener("click", checkMovieAnswer)
 
 // -----functions ------
+checkUserColorSchemePreference()
+
+function checkUserColorSchemePreference() {
+    if (
+        window.matchMedia("(prefers-color-scheme:dark)").matches && !colorScheme.dark
+    ) {
+        colorScheme.change()
+    }
+}
+
 function init () {
     mainMessageEl.innerHTML = "Welcome to Sports Trivia Central"
     mainPage.classList.remove("front-container");
@@ -301,6 +300,15 @@ function SoccerQuizInit () {
     setTimeout(function(){
         tickTock.play()
     },10)
+    countDown = 60
+    timer = setInterval(function(){
+        countDown -= 1
+        countdownEl.innerHTML = countDown
+        if (countDown <= 0) {
+            timesUp()
+            clearInterval(timer)
+        }
+    }, 1000)
 }
 
 function nextSoccerQuestion () {
@@ -320,12 +328,11 @@ function nextSoccerQuestion () {
 
     newSoccerQuestionChoice4 = currentSoccerQuestion.choice4
     soccer4.innerHTML = newSoccerQuestionChoice4
-
 }
 
 function checkSoccerAnswer (e) {
     if (e.target.value == currentSoccerQuestion.answer) {
-    soccerScore += 25
+    soccerScore += 20
     soccerQuestionsAsked +=1
     } else if (e.target.value !== currentSoccerQuestion.answer) {
     soccerQuestionsAsked +=1
@@ -333,21 +340,19 @@ function checkSoccerAnswer (e) {
     checkEndSoccerQuiz()
     nextSoccerQuestion()
     soccerScoreEl.innerText = `${soccerScore} /100`
-    console.log(soccerScore)
-    console.log(soccerQuestionsAsked)
 }
 
 function checkEndSoccerQuiz () {
     if (soccerQuestionsAsked == 5){
-        mainMessageEl.innerText = `GREAT JOB! YOU GOT ${soccerScore} / 100`
-            setTimeout (function() {
-                init()
-            },3000)
+        mainMessageEl.innerText = `GREAT JOB! YOU GOT ${soccerScore} / 100 in ${60 -countDown} seconds!`
+        clearInterval(timer)
+        setTimeout (function() {
+            init()
+        },3000)
         soccerQuiz.classList.add("soccer-quiz-box");
         confetti.start(2000)
-        }
     }
-
+}
 
 function nflQuizInit () {
     nflQuiz.classList.remove("nfl-quiz-box")
@@ -356,6 +361,18 @@ function nflQuizInit () {
     nflScore = 0
     availableNflQuestions = [...nflQuestions]
     nextNflQuestion()
+    setTimeout(function(){
+        tickTock.play()
+    },10)
+    countDown = 60
+    timer = setInterval(function(){
+        countDown -= 1
+        countdownEl.innerHTML = countDown
+        if (countDown <= 0) {
+            timesUp()
+            clearInterval(timer)
+        }
+    }, 1000)
 }
 
 function nextNflQuestion () {
@@ -375,15 +392,11 @@ function nextNflQuestion () {
 
     newNflQuestionChoice4= currentNflQuestion.choice4
     nfl4.innerHTML = newNflQuestionChoice4
-
-    setTimeout(function(){
-        tickTock.play()
-    },10)
 }
 
 function checkNflAnswer (e) {
     if (e.target.value == currentNflQuestion.answer) {
-    nflScore += 25
+    nflScore += 20
     nflQuestionsAsked +=1
     } else if (e.target.value !== currentNflQuestion.answer) {
     nflQuestionsAsked +=1
@@ -395,7 +408,8 @@ function checkNflAnswer (e) {
 
 function checkEndNflQuiz () {
     if (nflQuestionsAsked == 5){
-        mainMessageEl.innerText = `GREAT JOB! YOU GOT ${nflScore} / 100`
+        mainMessageEl.innerText = `GREAT JOB! YOU GOT ${nflScore} / 100 in ${60 - countDown} seconds!`
+        clearInterval(timer)
             setTimeout (function() {
                 init()
             },3000)
@@ -411,6 +425,18 @@ function olympicQuizInit () {
     olympicScore = 0
     availableOlympicQuestions = [...olympicQuestions]
     nextOlympicQuestion()
+    setTimeout(function(){
+        tickTock.play()
+    },10)
+    countDown = 60
+    timer = setInterval(function(){
+        countDown -= 1
+        countdownEl.innerHTML = countDown
+        if (countDown <= 0) {
+            timesUp()
+            clearInterval(timer)
+        }
+    }, 1000)
 }
 
 function nextOlympicQuestion () {
@@ -434,7 +460,7 @@ function nextOlympicQuestion () {
 
 function checkOlympicAnswer (e) {
     if (e.target.value == currentOlympicQuestion.answer) {
-        olympicScore += 25
+        olympicScore += 20
         olympicQuestionsAsked += 1
     } else if (e.target.value !== currentOlympicQuestion.answer) {
         olympicQuestionsAsked +=1
@@ -446,7 +472,8 @@ function checkOlympicAnswer (e) {
 
 function checkEndOlympicQuiz () {
     if (olympicQuestionsAsked == 5){
-        mainMessageEl.innerText = `GREAT JOB! YOU GOT ${olympicScore} / 100`
+        mainMessageEl.innerText = `GREAT JOB! YOU GOT ${olympicScore} / 100 in ${60 - countDown} seconds!`
+        clearInterval(timer)
         setTimeout (function() {
             init()
         },3000)
@@ -462,6 +489,18 @@ function movieQuizInit () {
     movieScore = 0
     availableMovieQuestions = [...movieQuestions]
     nextMovieQuestion()
+    setTimeout(function(){
+        tickTock.play()
+    },10)
+    countDown = 60
+    timer = setInterval(function(){
+        countDown -= 1
+        countdownEl.innerHTML = countDown
+        if (countDown <= 0) {
+            timesUp()
+            clearInterval(timer)
+        }
+    }, 1000)
 }
 
 function nextMovieQuestion () {
@@ -485,7 +524,7 @@ function nextMovieQuestion () {
 
 function checkMovieAnswer (e) {
     if (e.target.value == currentMovieQuestion.answer) {
-        movieScore += 25
+        movieScore += 20
         movieQuestionsAsked +=1
     } else if (e.target.value !== currentMovieQuestion.answer) {
         movieQuestionsAsked +=1
@@ -497,7 +536,8 @@ function checkMovieAnswer (e) {
 
 function checkEndMovieQuiz () {
     if (movieQuestionsAsked == 5){
-        mainMessageEl.innerText = `GREAT JOB! YOU GOT ${movieScore} / 100`
+        mainMessageEl.innerText = `GREAT JOB! YOU GOT ${movieScore} / 100 in ${60 - countDown} seconds!`
+        clearInterval(timer)
         setTimeout (function() {
             init()
         },3000)
@@ -506,3 +546,13 @@ function checkEndMovieQuiz () {
     }
 }
 
+function timesUp () {
+    mainMessageEl.innerHTML = "You Lose! Way too slow, try again"
+    soccerQuiz.classList.add("soccer-quiz-box")
+    nflQuiz.classList.add("nfl-quiz-box")
+    olympicQuiz.classList.add("olympic-quiz-box")
+    movieQuiz.classList.add("movie-quiz-box")
+    setTimeout (function (){
+        init()
+    }, 3000)
+}

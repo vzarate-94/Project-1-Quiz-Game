@@ -9,7 +9,7 @@ Instructions.
 
 1. Upon initializing the game, the user will be taken to the main manu page. Here the user will be given 4 sports categories to choose from.
 
-   'src=https://imgur.com/U7jBaY4'
+   <img src=https://imgur.com/U7jBaY4>
 
 2. The user will then click on a category, and immideately be taken to their first quiz.
 ![alt text](https://imgur.com/u83uypQ)
