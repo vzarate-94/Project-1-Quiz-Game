@@ -489,11 +489,10 @@ function checkMovieAnswer (e) {
 function checkEndMovieQuiz () {
     if (movieQuestionsAsked == 5){
         mainMessageEl.innerText = `GREAT JOB! YOU GOT ${movieScore} / 100`
-        
         setTimeout (function() {
-            movieQuiz.classList.add("movie-quiz-box")
             init()
         },2000)
+        movieQuiz.classList.add("movie-quiz-box")
     }
 }
 
