@@ -14,11 +14,16 @@ Instructions.
 ![alt text](https://imgur.com/u83uypQ)
 
 2. All categories consist of a 5 question quiz, each question being worth 20 points. 
+
 3. At the end, the user will be told his score out of the possible 100 points. 
 ![alt text](https://imgur.com/u83uypQ)
 
 4. The home page will automatically come up shortly after finishing your last question from the previous quiz. The user will now have the option to try any of the 4 categories again as many times as they please.
+
 5. At the top right corner of the application, the user will find a Dark button, the user can click on it to switch between light and dark mode.
 ![alt text](https://imgur.com/OxJUIlP)
 
-
+Languages:
+    1.Javascript
+    2.CSS
+    3.HTML

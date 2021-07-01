@@ -28,7 +28,7 @@ const nflButton = document.querySelector("#nfl")
 const olympicButton = document.querySelector("#olympics")
 const movieButton = document.querySelector("#movie")
 const importantMessage = document.querySelector("#important-message")
-const tickTock = new Audio('../audio/mixkit-tick-tock-clock-timer-1045.wav')
+const tickTock = new Audio('../audio/mixkit-bell-tick-tock-timer-1046.wav')
 // main page query selectors above!
 const soccerQuestionElement = document.querySelector("#question-message")
 const soccerOptions = Array.from(document.getElementsByClassName(".opt-btn"))
