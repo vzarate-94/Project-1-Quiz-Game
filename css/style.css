@@ -36,6 +36,19 @@ nav {
     margin-right: 5px;
 }
 
+h3 {
+    font-size: 16px;
+    margin-top: -30px;
+}
+
+li {
+    display: flex;
+    margin: 0;
+    justify-content: center;
+    text-align: center;
+    font-size: 15px;
+}
+
 #timer {
     display: flex;
     margin: auto;
