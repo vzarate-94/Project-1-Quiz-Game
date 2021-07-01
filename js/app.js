@@ -337,7 +337,7 @@ function checkEndSoccerQuiz () {
         mainMessageEl.innerText = `GREAT JOB! YOU GOT ${soccerScore} / 100`
             setTimeout (function() {
                 init()
-            },2000)
+            },3000)
         soccerQuiz.classList.add("soccer-quiz-box");
         confetti.start(2000)
         }
@@ -389,7 +389,7 @@ function checkEndNflQuiz () {
         mainMessageEl.innerText = `GREAT JOB! YOU GOT ${nflScore} / 100`
             setTimeout (function() {
                 init()
-            },2000)
+            },3000)
         nflQuiz.classList.add("nfl-quiz-box")
         confetti.start(2000)
         }
@@ -440,7 +440,7 @@ function checkEndOlympicQuiz () {
         mainMessageEl.innerText = `GREAT JOB! YOU GOT ${olympicScore} / 100`
         setTimeout (function() {
             init()
-        },2000)
+        },3000)
         olympicQuiz.classList.add("olympic-quiz-box")
         confetti.start(2000)
     }
@@ -491,7 +491,7 @@ function checkEndMovieQuiz () {
         mainMessageEl.innerText = `GREAT JOB! YOU GOT ${movieScore} / 100`
         setTimeout (function() {
             init()
-        },2000)
+        },3000)
     movieQuiz.classList.add("movie-quiz-box")
     confetti.start(2000)
     }
