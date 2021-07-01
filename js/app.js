@@ -17,64 +17,64 @@ function checkUserColorSchemePreference() {
     ) {
         colorScheme.change()
     }
-};
-console.log(darkMode)
+}
+
 
 const mainMessageEl = document.querySelector("#main-menu")
-const resetButton = document.querySelector("#reset-button");
-const mainPage = document.querySelector("#front-container");
-const button1 = document.querySelector("#fifa");
-const nflButton = document.querySelector("#nfl");
-const olympicButton = document.querySelector("#olympics");
-const movieButton = document.querySelector("#movie");
+const resetButton = document.querySelector("#reset-button")
+const mainPage = document.querySelector("#front-container")
+const button1 = document.querySelector("#fifa")
+const nflButton = document.querySelector("#nfl")
+const olympicButton = document.querySelector("#olympics")
+const movieButton = document.querySelector("#movie")
 const importantMessage = document.querySelector("#important-message")
 // main page query selectors above!
-const soccerQuestionElement = document.querySelector("#question-message");
-const soccerOptions = Array.from(document.getElementsByClassName(".opt-btn"));
-const soccer1 = document.querySelector("#soccer1");
-const soccer2 = document.querySelector("#soccer2");
-const soccer3 = document.querySelector("#soccer3");
-const soccer4 = document.querySelector("#soccer4");
-const soccerQuiz = document.querySelector("#soccer-quiz");
-const soccerScoreEl = document.querySelector("#soccer-score-message");
+const soccerQuestionElement = document.querySelector("#question-message")
+const soccerOptions = Array.from(document.getElementsByClassName(".opt-btn"))
+const soccer1 = document.querySelector("#soccer1")
+const soccer2 = document.querySelector("#soccer2")
+const soccer3 = document.querySelector("#soccer3")
+const soccer4 = document.querySelector("#soccer4")
+const soccerQuiz = document.querySelector("#soccer-quiz")
+const soccerScoreEl = document.querySelector("#soccer-score-message")
 // Soccer quiz query selectors above
-const nflQuestionElement = document.querySelector("#nfl-question-message");
-const nflOptions = Array.from(document.getElementsByClassName(".opt-btn"));
-const nfl1 = document.querySelector("#nfl1");
-const nfl2 = document.querySelector("#nfl2");
-const nfl3 = document.querySelector("#nfl3");
-const nfl4 = document.querySelector("#nfl4");
-const nflQuiz = document.querySelector("#nfl-quiz");
+const nflQuestionElement = document.querySelector("#nfl-question-message")
+const nflOptions = Array.from(document.getElementsByClassName(".opt-btn"))
+const nfl1 = document.querySelector("#nfl1")
+const nfl2 = document.querySelector("#nfl2")
+const nfl3 = document.querySelector("#nfl3")
+const nfl4 = document.querySelector("#nfl4")
+const nflQuiz = document.querySelector("#nfl-quiz")
 const nflScoreEl = document.querySelector("#nfl-score-message")
 // nfl quiz query selectors above
-const olympicQuestionElement = document.querySelector("#olympic-question-message");
-const olympicOptions = Array.from(document.getElementsByClassName(".opt-btn"));
-const olympic1 = document.querySelector("#olympic1");
-const olympic2 = document.querySelector("#olympic2");
-const olympic3 = document.querySelector("#olympic3");
-const olympic4 = document.querySelector("#olympic4");
-const olympicQuiz = document.querySelector("#olympic-quiz");
+const olympicQuestionElement = document.querySelector("#olympic-question-message")
+const olympicOptions = Array.from(document.getElementsByClassName(".opt-btn"))
+const olympic1 = document.querySelector("#olympic1")
+const olympic2 = document.querySelector("#olympic2")
+const olympic3 = document.querySelector("#olympic3")
+const olympic4 = document.querySelector("#olympic4")
+const olympicQuiz = document.querySelector("#olympic-quiz")
 const olympicMessageEl = document.querySelector("#olympic-score-message")
 // olympic quiz query selectors above
-const movieQuestionElement = document.querySelector("#movie-question-message");
-const movieOptions = document.querySelectorAll(".opt-btn");
-const movie1 = document.querySelector("#movie1");
-const movie2 = document.querySelector("#movie2");
-const movie3 = document.querySelector("#movie3");
-const movie4 = document.querySelector("#movie4");
-const movieQuiz = document.querySelector("#movie-quiz");
+const movieQuestionElement = document.querySelector("#movie-question-message")
+const movieOptions = document.querySelectorAll(".opt-btn")
+const movie1 = document.querySelector("#movie1")
+const movie2 = document.querySelector("#movie2")
+const movie3 = document.querySelector("#movie3")
+const movie4 = document.querySelector("#movie4")
+const movieQuiz = document.querySelector("#movie-quiz")
 const movieScoreEl = document.querySelector("#movie-score-message")
 // movie quiz query selectors above
 
 // --------Variables---------
-let currentSoccerQuestion = {};
-let soccerScore = "";
-let soccerQuestionsAsked = 0;
-let availableSoccerQuestions = [];
+let currentSoccerQuestion = {}
+let soccerScore = ""
+let soccerQuestionsAsked = 0
+let availableSoccerQuestions = []
 let soccerQuestions = [
     {
     number: 1,
-    question: "What country has won the most World Cups?",
+    question: "Which country has won the most World Cups?",
     answer: 2,
     choice1: "Germany",
     choice2: "Brazil",
@@ -111,13 +111,13 @@ let soccerQuestions = [
     choice3:"Qatar",
     choice4:"Saudi Arabia",
     }
-];
+]
 
 // soccer quiz variables above
-let currentNflQuestion = {};
-let nflScore = "";
-let nflQuestionsAsked = 0;
-let availableNflQuestions = [];
+let currentNflQuestion = {}
+let nflScore = ""
+let nflQuestionsAsked = 0
+let availableNflQuestions = []
 let nflQuestions = [
     {
     number: 1,
@@ -158,10 +158,10 @@ let nflQuestions = [
 ]
 
 // NFL quiz variables above
-let currentOlympicQuestion = {};
-let olympicScore = "";
-let olympicQuestionsAsked = 0;
-let availableOlympicQuestions = [];
+let currentOlympicQuestion = {}
+let olympicScore = ""
+let olympicQuestionsAsked = 0
+let availableOlympicQuestions = []
 let olympicQuestions = [
     {
     number: 1,
@@ -202,10 +202,10 @@ let olympicQuestions = [
 ]
 
 // Olympic quiz variables above
-let currentMovieQuestion = {};
-let movieScore = "";
-let movieQuestionsAsked = 0;
-let availableMovieQuestions = [];
+let currentMovieQuestion = {}
+let movieScore = ""
+let movieQuestionsAsked = 0
+let availableMovieQuestions = []
 let movieQuestions = [
     {
     number: 1,
@@ -291,28 +291,28 @@ function init () {
 // resets to  main menu-adding class that removes the quiz boxs
 
 function SoccerQuizInit () {
-    soccerQuiz.classList.remove("soccer-quiz-box");
-    mainPage.classList.add("front-container");
-    soccerQuestionsAsked = 1;
-    soccerScore = 0;
-    availableSoccerQuestions = [...soccerQuestions];
-    nextSoccerQuestion();
+    soccerQuiz.classList.remove("soccer-quiz-box")
+    mainPage.classList.add("front-container")
+    soccerQuestionsAsked = 1
+    soccerScore = 0
+    availableSoccerQuestions = [...soccerQuestions]
+    nextSoccerQuestion()
 }
 
 function nextSoccerQuestion () {
-    const soccerArray = Math.floor(Math.random() * availableSoccerQuestions.length);
-    currentSoccerQuestion = availableSoccerQuestions[soccerArray];
+    const soccerArray = Math.floor(Math.random() * availableSoccerQuestions.length)
+    currentSoccerQuestion = availableSoccerQuestions[soccerArray]
     newSoccerQuestion = currentSoccerQuestion.question
     soccerQuestionElement.innerHTML = `${soccerQuestionsAsked}: ${newSoccerQuestion}`
 
-    newSoccerQuestionChoice1= currentSoccerQuestion.choice1;
-    soccer1.innerHTML = newSoccerQuestionChoice1;
+    newSoccerQuestionChoice1= currentSoccerQuestion.choice1
+    soccer1.innerHTML = newSoccerQuestionChoice1
 
-    newSoccerQuestionChoice2 = currentSoccerQuestion.choice2;
-    soccer2.innerHTML = newSoccerQuestionChoice2;
+    newSoccerQuestionChoice2 = currentSoccerQuestion.choice2
+    soccer2.innerHTML = newSoccerQuestionChoice2
 
-    newSoccerQuestionChoice3 = currentSoccerQuestion.choice3;
-    soccer3.innerHTML = newSoccerQuestionChoice3;
+    newSoccerQuestionChoice3 = currentSoccerQuestion.choice3
+    soccer3.innerHTML = newSoccerQuestionChoice3
 
     newSoccerQuestionChoice4 = currentSoccerQuestion.choice4
     soccer4.innerHTML = newSoccerQuestionChoice4
@@ -345,31 +345,31 @@ function checkEndSoccerQuiz () {
 
 
 function nflQuizInit () {
-    nflQuiz.classList.remove("nfl-quiz-box");
-    mainPage.classList.add("front-container");
-    nflQuestionsAsked = 1;
-    nflScore = 0;
-    availableNflQuestions = [...nflQuestions];
-    nextNflQuestion();
+    nflQuiz.classList.remove("nfl-quiz-box")
+    mainPage.classList.add("front-container")
+    nflQuestionsAsked = 1
+    nflScore = 0
+    availableNflQuestions = [...nflQuestions]
+    nextNflQuestion()
 }
 
 function nextNflQuestion () {
-    const nflArray = Math.floor(Math.random() * availableNflQuestions.length);
-    currentNflQuestion = availableNflQuestions[nflArray];
+    const nflArray = Math.floor(Math.random() * availableNflQuestions.length)
+    currentNflQuestion = availableNflQuestions[nflArray]
     newNflQuestion = currentNflQuestion.question
     nflQuestionElement.innerHTML = `${nflQuestionsAsked}: ${newNflQuestion}`
 
-    newNflQuestionChoice1= currentNflQuestion.choice1;
-    nfl1.innerHTML = newNflQuestionChoice1;
+    newNflQuestionChoice1= currentNflQuestion.choice1
+    nfl1.innerHTML = newNflQuestionChoice1
 
-    newNflQuestionChoice2= currentNflQuestion.choice2;
-    nfl2.innerHTML = newNflQuestionChoice2;
+    newNflQuestionChoice2= currentNflQuestion.choice2
+    nfl2.innerHTML = newNflQuestionChoice2
 
-    newNflQuestionChoice3= currentNflQuestion.choice3;
-    nfl3.innerHTML = newNflQuestionChoice3;
+    newNflQuestionChoice3= currentNflQuestion.choice3
+    nfl3.innerHTML = newNflQuestionChoice3
 
-    newNflQuestionChoice4= currentNflQuestion.choice4;
-    nfl4.innerHTML = newNflQuestionChoice4;
+    newNflQuestionChoice4= currentNflQuestion.choice4
+    nfl4.innerHTML = newNflQuestionChoice4
 }
 
 function checkNflAnswer (e) {
@@ -390,37 +390,37 @@ function checkEndNflQuiz () {
             setTimeout (function() {
                 init()
             },2000)
-        nflQuiz.classList.add("nfl-quiz-box");
+        nflQuiz.classList.add("nfl-quiz-box")
         confetti.start(2000)
         }
     }
 
 function olympicQuizInit () {
-    olympicQuiz.classList.remove("olympic-quiz-box");
-    mainPage.classList.add("front-container");
-    olympicQuestionsAsked = 1;
-    olympicScore = 0;
-    availableOlympicQuestions = [...olympicQuestions];
-    nextOlympicQuestion();
+    olympicQuiz.classList.remove("olympic-quiz-box")
+    mainPage.classList.add("front-container")
+    olympicQuestionsAsked = 1
+    olympicScore = 0
+    availableOlympicQuestions = [...olympicQuestions]
+    nextOlympicQuestion()
 }
 
 function nextOlympicQuestion () {
-    const olympicArray = Math.floor(Math.random() * availableOlympicQuestions.length);
-    currentOlympicQuestion = availableOlympicQuestions[olympicArray];
+    const olympicArray = Math.floor(Math.random() * availableOlympicQuestions.length)
+    currentOlympicQuestion = availableOlympicQuestions[olympicArray]
     newOlympicQuestion = currentOlympicQuestion.question
     olympicQuestionElement.innerHTML = `${olympicQuestionsAsked}: ${newOlympicQuestion}`
 
-    newOlympicQuestionChoice1= currentOlympicQuestion.choice1;
-    olympic1.innerHTML = newOlympicQuestionChoice1;
+    newOlympicQuestionChoice1= currentOlympicQuestion.choice1
+    olympic1.innerHTML = newOlympicQuestionChoice1
 
-    newOlympicQuestionChoice2= currentOlympicQuestion.choice2;
-    olympic2.innerHTML = newOlympicQuestionChoice2;
+    newOlympicQuestionChoice2= currentOlympicQuestion.choice2
+    olympic2.innerHTML = newOlympicQuestionChoice2
 
-    newOlympicQuestionChoice3= currentOlympicQuestion.choice3;
-    olympic3.innerHTML = newOlympicQuestionChoice3;
+    newOlympicQuestionChoice3= currentOlympicQuestion.choice3
+    olympic3.innerHTML = newOlympicQuestionChoice3
 
-    newOlympicQuestionChoice4= currentOlympicQuestion.choice4;
-    olympic4.innerHTML = newOlympicQuestionChoice4;
+    newOlympicQuestionChoice4= currentOlympicQuestion.choice4
+    olympic4.innerHTML = newOlympicQuestionChoice4
 }
 
 function checkOlympicAnswer (e) {
@@ -441,37 +441,37 @@ function checkEndOlympicQuiz () {
         setTimeout (function() {
             init()
         },2000)
-        olympicQuiz.classList.add("olympic-quiz-box");
+        olympicQuiz.classList.add("olympic-quiz-box")
         confetti.start(2000)
     }
 }
 
 function movieQuizInit () {
-    movieQuiz.classList.remove("movie-quiz-box");
-    mainPage.classList.add("front-container");
-    movieQuestionsAsked = 1;
-    movieScore = 0;
-    availableMovieQuestions = [...movieQuestions];
-    nextMovieQuestion();
+    movieQuiz.classList.remove("movie-quiz-box")
+    mainPage.classList.add("front-container")
+    movieQuestionsAsked = 1
+    movieScore = 0
+    availableMovieQuestions = [...movieQuestions]
+    nextMovieQuestion()
 }
 
 function nextMovieQuestion () {
-    const movieArray = Math.floor(Math.random() * availableMovieQuestions.length);
-    currentMovieQuestion = availableMovieQuestions[movieArray];
+    const movieArray = Math.floor(Math.random() * availableMovieQuestions.length)
+    currentMovieQuestion = availableMovieQuestions[movieArray]
     newMovieQuestion = currentMovieQuestion.question
     movieQuestionElement.innerHTML = `${movieQuestionsAsked}: ${newMovieQuestion}`
 
-    newMovieQuestionChoice1= currentMovieQuestion.choice1;
-    movie1.innerHTML = newMovieQuestionChoice1;
+    newMovieQuestionChoice1= currentMovieQuestion.choice1
+    movie1.innerHTML = newMovieQuestionChoice1
 
-    newMovieQuestionChoice2= currentMovieQuestion.choice2;
-    movie2.innerHTML = newMovieQuestionChoice2;
+    newMovieQuestionChoice2= currentMovieQuestion.choice2
+    movie2.innerHTML = newMovieQuestionChoice2
 
-    newMovieQuestionChoice3= currentMovieQuestion.choice3;
-    movie3.innerHTML = newMovieQuestionChoice3;
+    newMovieQuestionChoice3= currentMovieQuestion.choice3
+    movie3.innerHTML = newMovieQuestionChoice3
 
-    newMovieQuestionChoice4= currentMovieQuestion.choice4;
-    movie4.innerHTML = newMovieQuestionChoice4;
+    newMovieQuestionChoice4= currentMovieQuestion.choice4
+    movie4.innerHTML = newMovieQuestionChoice4
 }
 
 function checkMovieAnswer (e) {
