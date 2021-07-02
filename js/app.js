@@ -269,6 +269,24 @@ let movieQuestions = [
     choice2: "Innsbruck 1976",
     choice3: "Lake Placid 1980",
     choice4: "Sarajevo 1984",
+    },
+    {
+    number: 9,
+    question: "Jackie Robinson's baseball journey is depicted in this movie?",
+    answer: 3,
+    choice1: "49",
+    choice2: "Jackie",
+    choice3: "42",
+    choice4: "NY Dodgers",
+    },
+    {
+    number: 10,
+    question: "This buildings steps in Philadelphia were made famous in the movie Rocky? ",
+    answer: 1,
+    choice1: "Philadelphia Muesuem of Art",
+    choice2: "Philadelphia City Hall",
+    choice3: "Liberty Bell",
+    choice4: "30th St Grand Station",
     }
 ]
 // Movie quiz variables above
