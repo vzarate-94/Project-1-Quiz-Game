@@ -251,6 +251,24 @@ let movieQuestions = [
     choice2: "Golden Retriever",
     choice3: "Golden Doodle",
     choice4: "Dalmation",
+    },
+    {
+    number: 7,
+    question: "Where did Rudy go to univesity?",
+    answer: 4,
+    choice1: "USC",
+    choice2: "Ohio State",
+    choice3: "Michigan",
+    choice4: "Notre Dame",
+    },
+    {
+    number: 8,
+    question: "Which Olympics did the USA hockey team beat the Russians in the movie Miracle?",
+    answer: 3,
+    choice1: "Sapporo 1972 ",
+    choice2: "Innsbruck 1976",
+    choice3: "Lake Placid 1980",
+    choice4: "Sarajevo 1984",
     }
 ]
 // Movie quiz variables above
