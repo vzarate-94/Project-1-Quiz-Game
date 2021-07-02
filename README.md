@@ -1,16 +1,16 @@
-## **Introduction88
-Hello! Welcome to Sports Trivia Central, here you'll be able to test out your knowledge of all things sports.
+## **Introduction**
+Hello! Welcome to <strong>Sports Trivia Central</strong>, here you'll be able to test out your knowledge of all things sports.
 
 Follow this link to start the game! [link](https://victorssportstrivia.netlify.app/)
 
-The idea for this quiz app comes from the classic jumbotron quizes every sports teams has during a break at a in play to entertain the fans. My idea was instead of only one fan being able to play, why not give the link to all fans in attendance and give everyone a chance to play on their phones for a chance to win a price! 
+The idea for this quiz app comes from the classic jumbotron quizes every sports teams has during a break at a in play to entertain the fans. My idea was instead of only one fan being able to play, why not give the link to all fans in attendance and give everyone a chance to play on their phones for a chance to win a price!
 
 
 ## **Instructions**
 
 1. Upon initializing the game, the user will be taken to the main manu page. Here the user will be given 4 sports categories to choose from.
 
-<img src="https://imgur.com/U7jBaY4">
+<img src=./pictures/mainmenuquiz.png>
 
 2. The user will then click on a category, and immideately be taken to their first quiz.
 ![alt text](https://imgur.com/u83uypQ)
@@ -26,9 +26,9 @@ The idea for this quiz app comes from the classic jumbotron quizes every sports 
 ![alt text](https://imgur.com/OxJUIlP)
 
 ## **Languages**
-1.Javascript 
-2.CSS 
-3.HTML
+1. Javascript 
+2. CSS 
+3. HTML
 
 ## **Next Steps**
 1. Individually style each different quiz box. Depending on the category.
