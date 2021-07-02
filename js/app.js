@@ -233,6 +233,24 @@ let movieQuestions = [
     choice2: "Jefferson High School",
     choice3: "Montgomery High",
     choice4: "T.C. Williams",
+    },
+    {
+    number: 5,
+    question: "In the movie Cool Runnings, what country is the bobsled team from?",
+    answer: 2,
+    choice1: "USA",
+    choice2: "Jamaica",
+    choice3: "Costa Rica",
+    choice4: "South Africa",
+    },
+    {
+    number: 6,
+    question: "What breed of dog is Buddy from AirBud?",
+    answer: 2,
+    choice1: "Labrador",
+    choice2: "Golden Retriever",
+    choice3: "Golden Doodle",
+    choice4: "Dalmation",
     }
 ]
 // Movie quiz variables above
@@ -347,7 +365,7 @@ function checkSoccerAnswer (e) {
 // Checking for the correct answer. Will also go to checkEndSoccerQuiz function to see if all 5 questions have been asked
 
 function checkEndSoccerQuiz () {
-    if (soccerQuestionsAsked == 5){
+    if (soccerQuestionsAsked == 6){
         mainMessageEl.innerText = `GREAT JOB! YOU GOT ${soccerScore} / 100 in ${60 -countDown} seconds!`
         clearInterval(timer)
         setTimeout (function() {
@@ -357,7 +375,7 @@ function checkEndSoccerQuiz () {
         confetti.start(2000)
     }
 }
-// if all 5 questions have been asked, the quiz board disappears and a score will show up
+// if all 5 questions have been asked, the quiz board disappears and a score will show up. Identical functions for all other quiz categories.
 
 function nflQuizInit () {
     nflQuiz.classList.remove("nfl-quiz-box")
@@ -412,7 +430,7 @@ function checkNflAnswer (e) {
 }
 
 function checkEndNflQuiz () {
-    if (nflQuestionsAsked == 5){
+    if (nflQuestionsAsked == 6){
         mainMessageEl.innerText = `GREAT JOB! YOU GOT ${nflScore} / 100 in ${60 - countDown} seconds!`
         clearInterval(timer)
             setTimeout (function() {
@@ -476,7 +494,7 @@ function checkOlympicAnswer (e) {
 }
 
 function checkEndOlympicQuiz () {
-    if (olympicQuestionsAsked == 5){
+    if (olympicQuestionsAsked == 6){
         mainMessageEl.innerText = `GREAT JOB! YOU GOT ${olympicScore} / 100 in ${60 - countDown} seconds!`
         clearInterval(timer)
         setTimeout (function() {
@@ -540,7 +558,7 @@ function checkMovieAnswer (e) {
 }
 
 function checkEndMovieQuiz () {
-    if (movieQuestionsAsked == 5){
+    if (movieQuestionsAsked == 6){
         mainMessageEl.innerText = `GREAT JOB! YOU GOT ${movieScore} / 100 in ${60 - countDown} seconds!`
         clearInterval(timer)
         setTimeout (function() {
