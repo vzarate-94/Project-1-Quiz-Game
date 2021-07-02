@@ -210,7 +210,7 @@ let nflQuestions = [
     {
     number: 10,
     question: "Who is Victor's favorite football team?",
-    answer: 2,
+    answer: 3,
     choice1: "New England Patriots",
     choice2: "Baltimore Ravens",
     choice3: "LA Chargers",
@@ -259,6 +259,60 @@ let olympicQuestions = [
     choice2: "Green",
     choice3: "Black",
     choice4: "Orange",
+    },
+    {
+    number: 5,
+    question: "In which year was the first Winter Olympics held?",
+    answer: 1,
+    choice1: "1924",
+    choice2: "1896",
+    choice3: "1954",
+    choice4: "1932",
+    },
+    {
+    number: 6,
+    question: "How many rings do the Olympics flag contain?",
+    answer: 3,
+    choice1: "4",
+    choice2: "6",
+    choice3: "5",
+    choice4: "8",
+    },
+    {
+    number: 7,
+    question: "How often do the summer Olympics happen?",
+    answer: 2,
+    choice1: "2 Years",
+    choice2: "4 Years",
+    choice3: "3 Years",
+    choice4: "6 Years",
+    },
+    {
+    number: 8,
+    question: "In which of the Olympic games did the torch relay start for the first time?",
+    answer: 4,
+    choice1: "1720",
+    choice2: "1950",
+    choice3: "1902",
+    choice4: "1936",
+    },
+    {
+    number: 9,
+    question: "How often do the summer Olympics happen?",
+    answer: 2,
+    choice1: "2 Years",
+    choice2: "4 Years",
+    choice3: "3 Years",
+    choice4: "6 Years",
+    },
+    {
+    number: 10,
+    question: "How often do the summer Olympics happen?",
+    answer: 2,
+    choice1: "2 Years",
+    choice2: "4 Years",
+    choice3: "3 Years",
+    choice4: "6 Years",
     },
 ]
 
@@ -422,10 +476,7 @@ function SoccerQuizInit () {
     soccerScore = 0
     availableSoccerQuestions = [...soccerQuestions]
     nextSoccerQuestion()
-    setTimeout(function(){
-        tickTock.play()
-    },10)
-    countDown = 60
+    countDown = 8
     timer = setInterval(function(){
         countDown -= 1
         countdownEl.innerHTML = countDown
