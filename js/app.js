@@ -570,7 +570,7 @@ function checkEndMovieQuiz () {
 }
 
 function timesUp () {
-    mainMessageEl.innerHTML = "You Lose! Way too slow, try again"
+    mainMessageEl.innerHTML = "You Lose! Way too slow, try again..."
     soccerQuiz.classList.add("soccer-quiz-box")
     nflQuiz.classList.add("nfl-quiz-box")
     olympicQuiz.classList.add("olympic-quiz-box")
