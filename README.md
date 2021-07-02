@@ -10,7 +10,7 @@ The idea for this quiz app comes from the classic jumbotron quizes every sports 
 
 1. Upon initializing the game, the user will be taken to the main manu page. Here the user will be given 4 sports categories to choose from.
 
-![Main-Menu](./users/victor/Pictures/Main-Quiz-Menu.png)
+<img src="https://imgur.com/U7jBaY4" width=250px>
 
 2. The user will then click on a category, and immideately be taken to their first quiz.
 ![alt text](https://imgur.com/u83uypQ)
@@ -35,3 +35,4 @@ The idea for this quiz app comes from the classic jumbotron quizes every sports 
 2. Add more questions to each category, making it much harder.
 3. Add a high score section.
 4. Clean up the code to make it much more concise
+
