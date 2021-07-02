@@ -566,7 +566,10 @@ function SoccerQuizInit () {
     soccerScore = 0
     availableSoccerQuestions = [...soccerQuestions]
     nextSoccerQuestion()
-    countDown = 8
+    setTimeout(function(){
+        tickTock.play()
+    },10)
+    countDown = 60
     timer = setInterval(function(){
         countDown -= 1
         countdownEl.innerHTML = countDown
