@@ -72,7 +72,6 @@ let soccerQuestions = [
     choice3: "Italy",
     choice4: "Argentina",
     },
-
     {
     number: 2,
     question: "Who won the first ever World Cup in 1930?",
@@ -82,7 +81,6 @@ let soccerQuestions = [
     choice3:"Germany",
     choice4: "Uruguay",
     },
-
     {
     number: 3,
     question: "Which player has scored a record 15 goals in his World Cup career?",
@@ -92,7 +90,6 @@ let soccerQuestions = [
     choice3: "Christiano Ronoaldo - Portugal",
     choice4: "Messi - Argentina",
     },
-
     {
     number: 4,
     question: "Which country will host the 2022 World Cup?",
@@ -101,7 +98,26 @@ let soccerQuestions = [
     choice2:"Kuwait",
     choice3:"Qatar",
     choice4:"Saudi Arabia",
-    }
+    },
+    {
+    number: 5,
+    question: "Which country won the 2006 World Cup?",
+    answer: 4,
+    choice1:"USA",
+    choice2:"Germaniy",
+    choice3:"France",
+    choice4:"Italy",
+    },
+    {
+    number: 6,
+    question: "How many World Cups has the U.S. Womens soccer team won?",
+    answer: 1,
+    choice1:"4",
+    choice2:"6",
+    choice3:"2",
+    choice4:"8",
+    },
+
 ]
 
 // soccer quiz variables above
@@ -145,7 +161,61 @@ let nflQuestions = [
     choice2: "New England Patriots",
     choice3: "Miami Dolphins",
     choice4: "New Orleans Saints",
-    }
+    },
+    {
+    number: 5,
+    question: "What Minnesota Vikings player was the 2007 AP Offensive Rookie of the Year?",
+    answer: 2,
+    choice1: "Marshawn Lynch",
+    choice2: "Adrian Peterson",
+    choice3: "Aqib Talib",
+    choice4: "Jamaal Charles",
+    },
+    {
+    number: 6,
+    question: "Who was the first pick in the 2020 NFL Draft?",
+    answer: 1,
+    choice1: "Joe Burrow",
+    choice2: "Chase Young",
+    choice3: "Trevor Lawrence",
+    choice4: "Justin Herbert",
+    },
+    {
+    number: 7,
+    question: "The LA Rams were previously in what city?",
+    answer: 3,
+    choice1: "San Diego",
+    choice2: "Oakland",
+    choice3: "St.louis",
+    choice4: "Detriot",
+    },
+    {
+    number: 8,
+    question: "Where did Tom Brady go to college?",
+    answer: 1,
+    choice1: "Michigan",
+    choice2: "Stanford",
+    choice3: "Boston College",
+    choice4: "Ohio State",
+    },
+    {
+    number: 9,
+    question: "Who won the most recent SuperBowl?",
+    answer: 2,
+    choice1: "New England Patriots",
+    choice2: "Tampa Bay Buccaneers",
+    choice3: "Kansas City Chiefs",
+    choice4: "San Francisco 49rs",
+    },
+    {
+    number: 10,
+    question: "Who is Victor's favorite football team?",
+    answer: 2,
+    choice1: "New England Patriots",
+    choice2: "Baltimore Ravens",
+    choice3: "LA Chargers",
+    choice4: "New York Giants",
+    },
 ]
 
 // NFL quiz variables above
@@ -254,7 +324,7 @@ let movieQuestions = [
     },
     {
     number: 7,
-    question: "Where did Rudy go to univesity?",
+    question: "What university did Rudy play for?",
     answer: 4,
     choice1: "USC",
     choice2: "Ohio State",
