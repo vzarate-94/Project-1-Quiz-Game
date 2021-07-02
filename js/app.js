@@ -104,7 +104,7 @@ let soccerQuestions = [
     question: "Which country won the 2006 World Cup?",
     answer: 4,
     choice1:"USA",
-    choice2:"Germaniy",
+    choice2:"Germany",
     choice3:"France",
     choice4:"Italy",
     },
