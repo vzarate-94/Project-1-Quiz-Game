@@ -54,7 +54,7 @@ li {
     margin: auto;
     background-color: darkgray;
     color: black;
-    border:5px solid rgb(145, 2, 2);
+    border:7px solid rgb(145, 2, 2);
     border-radius: 5px;
     font-size: 30px;
     width: 55px;
@@ -75,7 +75,7 @@ main,
     color: rgb(145, 2, 2);
     background-color: darkgray;
     border-radius: 8px;
-    border: 10px solid;
+    border: 13px solid;
     justify-content: center;
     align-items: center;
 }
@@ -97,6 +97,7 @@ main,
 
 #simple-message {
     padding-top: 20px;
+    padding-bottom: 40px;
     font-size: 22px;
     font-family: sans-serif;
     color: cornsilk;
