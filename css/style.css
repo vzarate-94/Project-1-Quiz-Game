@@ -146,7 +146,7 @@ main .next {
 
 .opt-btn:hover,
 main .btn:hover {
-    background-color: rgba(25, 25, 104, 0.81);
+    background-color: rgba(25, 25, 104, 0.40);
 }
 
 #soccer-score-message,
