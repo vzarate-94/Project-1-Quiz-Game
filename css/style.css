@@ -177,8 +177,8 @@ body.dark {
     color: darkblue;
 }
 
-@media only screen and (min-width: 768px) {
-    .quiz-box {
-width: 300px;
+@media only screen and (max-width: 408px) {
+    body {
+        width: 265px;
     }
 }
