@@ -251,6 +251,7 @@ let olympicScore = ""
 let olympicQuestionsAsked = 0
 let availableOlympicQuestions = []
 let olympicQuestions = [
+    
     {
     number: 2,
     question: "An Olympic gold medal is made mostly of what metal?",
