@@ -179,7 +179,7 @@ body.dark {
 
 @media only screen and (max-width: 408px) {
     body {
-        width: 255px;
+        width: 375px;
     }
 
     main,
@@ -187,7 +187,7 @@ body.dark {
         position: relative;
         top: 30%;
         text-align: center;
-        width: 190px;
+        width: 290px;
         height: 550px;
         margin: auto;
         color: rgb(145, 2, 2);
@@ -217,9 +217,5 @@ body.dark {
         margin: auto;
         text-align: center;
         margin-top: 10px;
-    }
-
-    nav {
-        width: 100%;
     }
 }
