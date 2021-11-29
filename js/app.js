@@ -208,15 +208,6 @@ let nflQuestions = [
     choice4: "San Francisco 49rs",
     },
     {
-    number: 10,
-    question: "Who is Victor's favorite football team?",
-    answer: 3,
-    choice1: "New England Patriots",
-    choice2: "Baltimore Ravens",
-    choice3: "LA Chargers",
-    choice4: "New York Giants",
-    },
-    {
     number: 11,
     question: "How many Super Bowls has there been",
     answer: 1,
@@ -260,15 +251,6 @@ let olympicScore = ""
 let olympicQuestionsAsked = 0
 let availableOlympicQuestions = []
 let olympicQuestions = [
-    {
-    number: 1,
-    question: "What is the Olympic motto?",
-    answer: 3,
-    choice1: "Refuse To Lose",
-    choice2: "Dare To Be Great",
-    choice3: "Faster, Higher, Stronger",
-    choice4: "Man's Reach Exceeds His Grasp",
-    },
     {
     number: 2,
     question: "An Olympic gold medal is made mostly of what metal?",
