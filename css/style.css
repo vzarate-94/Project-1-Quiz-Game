@@ -179,6 +179,47 @@ body.dark {
 
 @media only screen and (max-width: 408px) {
     body {
-        width: 265px;
+        width: 255px;
+    }
+
+    main,
+    .quiz-box {
+        position: relative;
+        top: 30%;
+        text-align: center;
+        width: 190px;
+        height: 550px;
+        margin: auto;
+        color: rgb(145, 2, 2);
+        background-color: darkgray;
+        border-radius: 8px;
+        border: 13px solid;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .opt-btn, main .btn {
+        background-color: rgb(56, 102, 187, .5);
+        color: rgb(145, 2, 2);
+        width: 150px;
+        font-size: 20%;
+        height: 80px;
+        display: flex;
+        position: relative;
+        margin-top: 20px;
+        font-size: 24px;
+        border-radius: 13px;
+        border: 2px solid;
+        flex-wrap: inherit;
+        justify-content: center;
+        cursor: pointer;
+        align-items: center;
+        margin: auto;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    nav {
+        width: 100%;
     }
 }
