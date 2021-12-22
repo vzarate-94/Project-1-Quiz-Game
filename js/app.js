@@ -549,9 +549,9 @@ function SoccerQuizInit () {
     soccerScore = 0
     availableSoccerQuestions = [...soccerQuestions]
     nextSoccerQuestion()
-    setTimeout(function(){
-        tickTock.play()
-    },10)
+    // setTimeout(function(){
+    //     tickTock.play()
+    // },10)
     countDown = 60
     timer = setInterval(function(){
         countDown -= 1
@@ -617,9 +617,9 @@ function nflQuizInit () {
     nflScore = 0
     availableNflQuestions = [...nflQuestions]
     nextNflQuestion()
-    setTimeout(function(){
-        tickTock.play()
-    },10)
+    // setTimeout(function(){
+    //     tickTock.play()
+    // },10)
     countDown = 60
     timer = setInterval(function(){
         countDown -= 1
@@ -681,9 +681,9 @@ function olympicQuizInit () {
     olympicScore = 0
     availableOlympicQuestions = [...olympicQuestions]
     nextOlympicQuestion()
-    setTimeout(function(){
-        tickTock.play()
-    },10)
+    // setTimeout(function(){
+    //     tickTock.play()
+    // },10)
     countDown = 60
     timer = setInterval(function(){
         countDown -= 1
@@ -745,9 +745,9 @@ function movieQuizInit () {
     movieScore = 0
     availableMovieQuestions = [...movieQuestions]
     nextMovieQuestion()
-    setTimeout(function(){
-        tickTock.play()
-    },10)
+    // setTimeout(function(){
+    //     tickTock.play()
+    // },10)
     countDown = 60
     timer = setInterval(function(){
         countDown -= 1
