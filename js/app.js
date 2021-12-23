@@ -21,6 +21,7 @@ const importantMessage = document.querySelector("#important-message")
 const tickTock = new Audio('../audio/mixkit-bell-tick-tock-timer-1046.wav')
 let timer 
 let countDown
+let answerColorChange = document.querySelector(".opt-btn")
 // main page query selectors above!
 const soccerQuestionElement = document.querySelector("#question-message")
 const soccer1 = document.querySelector("#soccer1")
