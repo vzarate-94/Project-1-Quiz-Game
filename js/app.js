@@ -48,13 +48,13 @@ const olympicQuiz = document.querySelector("#olympic-quiz")
 const olympicMessageEl = document.querySelector("#olympic-score-message")
 // olympic quiz query selectors above
 const movieQuestionElement = document.querySelector("#movie-question-message")
-const movie1 = document.querySelector("#movie1")
-const movie2 = document.querySelector("#movie2")
-const movie3 = document.querySelector("#movie3")
-const movie4 = document.querySelector("#movie4")
-const movieQuiz = document.querySelector("#movie-quiz")
-const movieScoreEl = document.querySelector("#movie-score-message")
-// movie quiz query selectors above
+// const movie1 = document.querySelector("#movie1")
+// const movie2 = document.querySelector("#movie2")
+// const movie3 = document.querySelector("#movie3")
+// const movie4 = document.querySelector("#movie4")
+// const movieQuiz = document.querySelector("#movie-quiz")
+// const movieScoreEl = document.querySelector("#movie-score-message")
+// // movie quiz query selectors above
 
 // --------Variables---------
 
