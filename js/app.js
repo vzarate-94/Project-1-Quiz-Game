@@ -238,7 +238,7 @@ let nflQuestions = [
     {
     number: 14,
     question: "Which NFL team has a star on their helmet?",
-    answer: 3,
+    answer: 4,
     choice1: "Green Bay Packers",
     choice2: "New York Giants",
     choice3: "Cleveland Browns",
