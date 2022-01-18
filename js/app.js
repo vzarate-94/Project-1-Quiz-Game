@@ -237,12 +237,12 @@ let nflQuestions = [
     },
     {
     number: 14,
-    question: "Which NFL team has no logo on their helmet??",
+    question: "Which NFL team has a star on their helmet?",
     answer: 3,
     choice1: "Green Bay Packers",
     choice2: "New York Giants",
     choice3: "Cleveland Browns",
-    choice4: "Houston Texans",
+    choice4: "Dallas Cowboys",
     },
 ]
 
