@@ -550,6 +550,8 @@ function init () {
 function SoccerQuizInit () {
     soccerQuiz.classList.remove("soccer-quiz-box")
     mainPage.classList.add("front-container")
+    soccerScoreEl.style.color = "rgb(145, 2, 2)"
+    soccerScoreEl.innerHTML = "Good Luck!"
     soccerQuestionsAlreadyAsked = []
     soccerQuestionsAsked = 1
     soccerScore = 0
@@ -631,6 +633,8 @@ function checkEndSoccerQuiz () {
 function nflQuizInit () {
     nflQuiz.classList.remove("nfl-quiz-box")
     mainPage.classList.add("front-container")
+    nflScoreEl.style.color = "rgb(145, 2, 2)"
+    nflScoreEl.innerHTML = "Good Luck!"
     nflQuestionsAlreadyAsked = []
     nflQuestionsAsked = 1
     nflScore = 0
@@ -706,6 +710,8 @@ function checkEndNflQuiz () {
 function olympicQuizInit () {
     olympicQuiz.classList.remove("olympic-quiz-box")
     mainPage.classList.add("front-container")
+    olympicMessageEl.style.color = "rgb(145, 2, 2)"
+    olympicMessageEl.innerHTML = "Good Luck!"
     olympicQuestionsAsked = 1
     olympicQuestionsAlreadyAsked = []
     olympicScore = 0
@@ -780,6 +786,8 @@ function checkEndOlympicQuiz () {
 function movieQuizInit () {
     movieQuiz.classList.remove("movie-quiz-box")
     mainPage.classList.add("front-container")
+    movieScoreEl.style.color = "rgb(145, 2, 2)"
+    movieScoreEl.innerHTML = "You got this!"
     movieQuestionsAlreadyAsked = []
     movieQuestionsAsked = 1
     movieScore = 0
@@ -835,7 +843,7 @@ function checkMovieAnswer (e) {
     }
     checkEndMovieQuiz()
     nextMovieQuestion()
-    movieScoreEl.innerText = `${movieScore} / 100`
+    movieScoreEl.innerText = `Score: ${movieScore} / 100`
 }
 
 function checkEndMovieQuiz () {
