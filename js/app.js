@@ -253,6 +253,7 @@ let currentOlympicQuestion = {}
 let olympicScore = ""
 let olympicQuestionsAsked = 0
 let availableOlympicQuestions = []
+let olympicQuestionsAlreadyAsked = []
 let olympicQuestions = [
     
     {
@@ -329,7 +330,7 @@ let olympicQuestions = [
     },
     {
     number: 10,
-    question: "When were the first modern Olympics hels?",
+    question: "When were the first MODERN Olympics held?",
     answer: 1,
     choice1: "1896",
     choice2: "1920",
@@ -347,12 +348,12 @@ let olympicQuestions = [
     },
     {
     number: 12,
-    question: "Where will the Olympics be held this year?",
+    question: "Where were the Olympics held this year?",
     answer: 4,
     choice1: "London",
-    choice2: "Singapore",
+    choice2: "Tokyo",
     choice3: "Berlin",
-    choice4: "Tokyo",
+    choice4: "Beijing",
     },
     {
     number: 13,
@@ -705,6 +706,7 @@ function olympicQuizInit () {
     olympicQuiz.classList.remove("olympic-quiz-box")
     mainPage.classList.add("front-container")
     olympicQuestionsAsked = 1
+    olympicQuestionsAlreadyAsked = []
     olympicScore = 0
     availableOlympicQuestions = [...olympicQuestions]
     nextOlympicQuestion()
@@ -724,7 +726,13 @@ function olympicQuizInit () {
 
 function nextOlympicQuestion () {
     const olympicArray = Math.floor(Math.random() * availableOlympicQuestions.length)
-    currentOlympicQuestion = availableOlympicQuestions[olympicArray]
+    if (olympicQuestionsAlreadyAsked.includes(olympicArray) === false) {
+        olympicQuestionsAlreadyAsked.push(olympicArray)
+    } else {
+        nextOlympicQuestion()
+    }
+
+    currentOlympicQuestion = availableOlympicQuestions[olympicQuestionsAlreadyAsked[olympicQuestionsAlreadyAsked.length - 1]]
     newOlympicQuestion = currentOlympicQuestion.question
     olympicQuestionElement.innerHTML = `${olympicQuestionsAsked}: ${newOlympicQuestion}`
 
