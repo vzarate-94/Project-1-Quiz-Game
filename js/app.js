@@ -648,13 +648,6 @@ function nflQuizInit () {
     }, 1000)
 }
 
-// if (soccerQuestionsAlreadyAsked.includes(soccerArray) === false) {
-//     soccerQuestionsAlreadyAsked.push(soccerArray)
-//     console.log(soccerQuestionsAlreadyAsked)
-// } else {
-//     nextSoccerQuestion()
-// }
-
 function nextNflQuestion () {
     let nflArray = Math.floor(Math.random() * availableNflQuestions.length)
     if (nflQuestionsAlreadyAsked.includes(nflArray) === false) {
@@ -664,7 +657,7 @@ function nextNflQuestion () {
         nextNflQuestion()
     }
 
-    currentNflQuestion = availableNflQuestions[nflQuestionsAlreadyAsked.length - 1]
+    currentNflQuestion = availableNflQuestions[nflQuestionsAlreadyAsked[nflQuestionsAlreadyAsked.length - 1]]
     console.log(availableNflQuestions[nflQuestionsAlreadyAsked.length - 1])
     newNflQuestion = currentNflQuestion.question
     nflQuestionElement.innerHTML = `${nflQuestionsAsked}: ${newNflQuestion}`
