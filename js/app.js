@@ -729,6 +729,7 @@ function checkOlympicAnswer (e) {
 
     } else if (e.target.value !== currentOlympicQuestion.answer) {
         olympicQuestionsAsked +=1
+        olympicMessageEl.style.color = "black"
     }
     checkEndOlympicQuiz()
     nextOlympicQuestion()
@@ -791,8 +792,10 @@ function checkMovieAnswer (e) {
     if (e.target.value == currentMovieQuestion.answer) {
         movieScore += 20
         movieQuestionsAsked +=1
+        movieScoreEl.style.color = "green"
     } else if (e.target.value !== currentMovieQuestion.answer) {
         movieQuestionsAsked +=1
+        movieScoreEl.style.color = "black"
     }
     checkEndMovieQuiz()
     nextMovieQuestion()
