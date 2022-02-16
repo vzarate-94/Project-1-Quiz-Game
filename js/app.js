@@ -63,6 +63,7 @@ let currentSoccerQuestion = {}
 let soccerScore = ""
 let soccerQuestionsAsked = 0
 let availableSoccerQuestions = []
+let soccerQuestionsAlreadyAsked = []
 let soccerQuestions = [
     {
     number: 1,
@@ -546,6 +547,7 @@ function init () {
 function SoccerQuizInit () {
     soccerQuiz.classList.remove("soccer-quiz-box")
     mainPage.classList.add("front-container")
+    soccerQuestionsAlreadyAsked = []
     soccerQuestionsAsked = 1
     soccerScore = 0
     availableSoccerQuestions = [...soccerQuestions]
@@ -566,8 +568,16 @@ function SoccerQuizInit () {
 // Initializes the quiz board, makes the main menu display:none. starts the tick tock sound and starts timer for soccer quiz
 
 function nextSoccerQuestion () {
-    const soccerArray = Math.floor(Math.random() * availableSoccerQuestions.length)
-    currentSoccerQuestion = availableSoccerQuestions[soccerArray]
+    let soccerArray = Math.floor(Math.random() * availableSoccerQuestions.length)
+    if (soccerQuestionsAlreadyAsked.includes(soccerArray) === false) {
+        soccerQuestionsAlreadyAsked.push(soccerArray)
+        console.log(soccerQuestionsAlreadyAsked)
+    } else {
+        nextSoccerQuestion()
+    }
+    
+        
+    currentSoccerQuestion = availableSoccerQuestions[soccerQuestionsAlreadyAsked.length - 1]
     newSoccerQuestion = currentSoccerQuestion.question
     soccerQuestionElement.innerHTML = `${soccerQuestionsAsked}: ${newSoccerQuestion}`
 
@@ -582,6 +592,7 @@ function nextSoccerQuestion () {
 
     newSoccerQuestionChoice4 = currentSoccerQuestion.choice4
     soccer4.innerHTML = newSoccerQuestionChoice4
+    
 }
 // gets random Soccer question and puts the question and choices on to the quiz board.
 
