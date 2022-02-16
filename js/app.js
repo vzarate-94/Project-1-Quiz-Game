@@ -540,6 +540,8 @@ function init () {
     nflQuiz.classList.add("nfl-quiz-box");
     olympicQuiz.classList.add("olympic-quiz-box");
     movieQuiz.classList.add("movie-quiz-box")
+    clearInterval(timer)
+    countdownEl.innerHTML = "60"
     soccerScore = 0
     nflScore = 0
     olympicScore = 0
