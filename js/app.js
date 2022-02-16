@@ -371,6 +371,7 @@ let currentMovieQuestion = {}
 let movieScore = ""
 let movieQuestionsAsked = 0
 let availableMovieQuestions = []
+let movieQuestionsAlreadyAsked = []
 let movieQuestions = [
     {
     number: 1,
@@ -779,6 +780,7 @@ function checkEndOlympicQuiz () {
 function movieQuizInit () {
     movieQuiz.classList.remove("movie-quiz-box")
     mainPage.classList.add("front-container")
+    movieQuestionsAlreadyAsked = []
     movieQuestionsAsked = 1
     movieScore = 0
     availableMovieQuestions = [...movieQuestions]
@@ -799,7 +801,13 @@ function movieQuizInit () {
 
 function nextMovieQuestion () {
     const movieArray = Math.floor(Math.random() * availableMovieQuestions.length)
-    currentMovieQuestion = availableMovieQuestions[movieArray]
+    if (movieQuestionsAlreadyAsked.includes(movieArray) === false) {
+        movieQuestionsAlreadyAsked.push(movieArray)
+    } else {
+        nextMovieQuestion()
+    }
+
+    currentMovieQuestion = availableMovieQuestions[movieQuestionsAlreadyAsked[movieQuestionsAlreadyAsked.length - 1]]
     newMovieQuestion = currentMovieQuestion.question
     movieQuestionElement.innerHTML = `${movieQuestionsAsked}: ${newMovieQuestion}`
 
