@@ -127,6 +127,7 @@ let currentNflQuestion = {}
 let nflScore = ""
 let nflQuestionsAsked = 0
 let availableNflQuestions = []
+let nflQuestionsAlreadyAsked = []
 let nflQuestions = [
     {
     number: 1,
@@ -205,7 +206,7 @@ let nflQuestions = [
     question: "Who won the most recent Super Bowl?",
     answer: 2,
     choice1: "New England Patriots",
-    choice2: "Tampa Bay Buccaneers",
+    choice2: "Los Angeles Rams",
     choice3: "Kansas City Chiefs",
     choice4: "San Francisco 49rs",
     },
@@ -571,13 +572,12 @@ function nextSoccerQuestion () {
     let soccerArray = Math.floor(Math.random() * availableSoccerQuestions.length)
     if (soccerQuestionsAlreadyAsked.includes(soccerArray) === false) {
         soccerQuestionsAlreadyAsked.push(soccerArray)
-        console.log(soccerQuestionsAlreadyAsked)
     } else {
         nextSoccerQuestion()
     }
     
         
-    currentSoccerQuestion = availableSoccerQuestions[soccerQuestionsAlreadyAsked.length - 1]
+    currentSoccerQuestion = availableSoccerQuestions[soccerQuestionsAlreadyAsked[soccerQuestionsAlreadyAsked.length - 1]]
     newSoccerQuestion = currentSoccerQuestion.question
     soccerQuestionElement.innerHTML = `${soccerQuestionsAsked}: ${newSoccerQuestion}`
 
@@ -629,6 +629,7 @@ function checkEndSoccerQuiz () {
 function nflQuizInit () {
     nflQuiz.classList.remove("nfl-quiz-box")
     mainPage.classList.add("front-container")
+    nflQuestionsAlreadyAsked = []
     nflQuestionsAsked = 1
     nflScore = 0
     availableNflQuestions = [...nflQuestions]
@@ -647,9 +648,24 @@ function nflQuizInit () {
     }, 1000)
 }
 
+// if (soccerQuestionsAlreadyAsked.includes(soccerArray) === false) {
+//     soccerQuestionsAlreadyAsked.push(soccerArray)
+//     console.log(soccerQuestionsAlreadyAsked)
+// } else {
+//     nextSoccerQuestion()
+// }
+
 function nextNflQuestion () {
-    const nflArray = Math.floor(Math.random() * availableNflQuestions.length)
-    currentNflQuestion = availableNflQuestions[nflArray]
+    let nflArray = Math.floor(Math.random() * availableNflQuestions.length)
+    if (nflQuestionsAlreadyAsked.includes(nflArray) === false) {
+        nflQuestionsAlreadyAsked.push(nflArray)
+        console.log(nflQuestionsAlreadyAsked)
+    } else {
+        nextNflQuestion()
+    }
+
+    currentNflQuestion = availableNflQuestions[nflQuestionsAlreadyAsked.length - 1]
+    console.log(availableNflQuestions[nflQuestionsAlreadyAsked.length - 1])
     newNflQuestion = currentNflQuestion.question
     nflQuestionElement.innerHTML = `${nflQuestionsAsked}: ${newNflQuestion}`
 
