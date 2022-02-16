@@ -589,14 +589,18 @@ function checkSoccerAnswer (e) {
     if (e.target.value == currentSoccerQuestion.answer) {
     soccerScore += 20
     soccerQuestionsAsked +=1
+    soccerScoreEl.style.color = "green"
     } else if (e.target.value !== currentSoccerQuestion.answer) {
     soccerQuestionsAsked +=1
+    soccerScoreEl.style.color = "black"
     }
     checkEndSoccerQuiz()
     nextSoccerQuestion()
     soccerScoreEl.innerText = `${soccerScore} /100`
 }
 // Checking for the correct answer. Will also go to checkEndSoccerQuiz function to see if all 5 questions have been asked
+
+
 
 function checkEndSoccerQuiz () {
     if (soccerQuestionsAsked == 6){
@@ -655,8 +659,10 @@ function checkNflAnswer (e) {
     if (e.target.value == currentNflQuestion.answer) {
     nflScore += 20
     nflQuestionsAsked +=1
+    nflScoreEl.style.color = "green"
     } else if (e.target.value !== currentNflQuestion.answer) {
     nflQuestionsAsked +=1
+    nflScoreEl.style.color = "black"
     }
     checkEndNflQuiz()
     nextNflQuestion()
@@ -719,6 +725,8 @@ function checkOlympicAnswer (e) {
     if (e.target.value == currentOlympicQuestion.answer) {
         olympicScore += 20
         olympicQuestionsAsked += 1
+        olympicMessageEl.style.color = "green"
+
     } else if (e.target.value !== currentOlympicQuestion.answer) {
         olympicQuestionsAsked +=1
     }
